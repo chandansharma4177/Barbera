@@ -1,0 +1,49 @@
+h1,h2,h3,h4,h5,h6,p{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#title{
+  background-image: url('salon.jpg');
+  color: #fff;
+  height: 43.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar{
+
+}
+
+.Barbera_logo{
+  width:3rem;
+  height:3rem;
+  padding: 0.3125rem;
+}
+
+.title_content{
+
+  text-align: center;
+  padding: 10rem 0;
+}
+
+.title_h1{
+  font-family: 'B612', sans-serif;
+  font-size: 600%;
+  font-weight: 700;
+  color: #ebebeb;
+}
+
+.title_p{
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.title_hr{
+  width: 25rem;
+  height: 1px;
+  color:#fff;
+  background: #fff;
+
+
+}
