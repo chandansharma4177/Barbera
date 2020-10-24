@@ -5,14 +5,18 @@ h1,h2,h3,h4,h5,h6,p{
 #title{
   background-image: url('salon.jpg');
   color: #fff;
-  height: 43.75rem;
+  height:1500%;
   background-position: center;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
+
+  padding: 2% 6% 0% 6%;
+  text-align: left;
+
 }
 
 .navbar{
-
+  text-align: left;
 }
 
 .Barbera_logo{
@@ -23,13 +27,13 @@ h1,h2,h3,h4,h5,h6,p{
 
 .title_content{
 
-  text-align: center;
   padding: 10rem 0;
+
 }
 
 .title_h1{
   font-family: 'B612', sans-serif;
-  font-size: 600%;
+  font-size: 500%;
   font-weight: 700;
   color: #ebebeb;
 }
@@ -40,23 +44,68 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 .title_hr{
-  width: 30rem;
+
   height: 1px;
   color:#fff;
   background: #fff;
 }
 
+.title_image{
+  text-align: center;
+  padding-top: 4%;
+
+}
+
+.title_img{
+  position: absolute;
+  right: 30%;
+  transform: rotate(25deg);
+  width: 300px;
+  height: auto;
+
+}
+
+.google_play_image{
+  margin: 2rem 1rem 0 0;
+
+
+  margin-bottom: 0;
+}
+
 @media (max-width:600px) {
+  #title{
+    text-align: center;
+  }
   .title_h1{
     font-size: 400%;
+    text-align: center;
   }
 
   .title_p{
     font-size: 1rem;
+    text-align: center;
   }
 
   .title_hr{
     width: 20rem;
+    text-align: center;
+  }
+
+  .title_image{
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .google_play_image{
+    padding-top: 12%;
+    text-align: center;
+  }
+}
+
+@media (max-width:1070px) {
+  .title_img{
+    position:static;
+    transform: rotate(0);
   }
 }
 
@@ -308,7 +357,7 @@ padding:0  0 5%;
 }
 
 .contact_us_email{
-  padding: 2% auto 1%;
+  padding: 2% 1% 0;
 }
 
 .contact_us_email_heading{
