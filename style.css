@@ -11,20 +11,20 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: left;
 }
 
-.navbar {
-  text-align: left;
-  padding: 0;
-  margin: 0;
-}
 
-.Barbera_logo {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.3125rem;
+
+.barbera_logo {
+  padding-left: 0;
+  margin: 0;
 }
 
 .title_content {
   padding: 10rem 0;
+}
+
+.navbar {
+  text-align: left;
+
 }
 
 .title_h1 {
@@ -65,13 +65,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 @media (max-width:600px) {
   #title{
-    padding: 0 ;
+    padding: 5% 0 0 0 ;
   }
 
   .title_content{
+    padding: 20% 3%;
     text-align: center;
-    padding-bottom: 20%;
-    padding-top: 20%;
   }
 
   .title_h1 {
