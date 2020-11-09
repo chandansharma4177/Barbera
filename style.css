@@ -54,7 +54,7 @@
 
 .book_card{
   margin-top: 1rem;
-  width: 60%;
+  width: 25%;
   height: auto;
 }
 
@@ -101,16 +101,37 @@
   opacity: 0.9;
 }
 
-
-h4{
-  width: 100%;
-  font-size: 110%;
+.carousel_container{
+  text-align: center;
+}
+.carousel-item {
+  padding: 2% 10% 4%;
 }
 
-@media (max-width: 1280px) {
 
-
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  height: 50px;
+    width: 50px;
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    
 }
+
+
+/* @media (max-width: 800px) {
+  .book_card{
+    margin-top: 1rem;
+    width: auto;
+    height: auto;
+  }
+
+  .book_nav{
+    height: 6rem;
+  }
+
+} */
 /* index.html */
 
 h1, h2, h3, h4, h5, h6, p {
@@ -511,4 +532,6 @@ h1, h2, h3, h4, h5, h6, p {
     position: static;
     width: auto;
   }
+
+
 }
