@@ -18,7 +18,26 @@ function off_men() {
   document.getElementById("overlay_women").style.left = "80%";
   document.getElementById("overlay_women").style.padding = "20% 0";
   // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
-
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:30,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:true,
+            loop:false
+        }
+    }
+})
 
 }
 
