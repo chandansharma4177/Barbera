@@ -533,7 +533,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
   .book_nav{
-    height: 5rem;
+    height: 4rem;
   }
 
   #trending_in_men,
@@ -557,6 +557,10 @@ h1, h2, h3, h4, h5, h6, p {
 
   .owl-carousel{
     text-align: center;
+  }
+
+  .card-text{
+    margin-right:0;
   }
 
 }
