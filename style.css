@@ -1,133 +1,4 @@
 
-
-.Container{
-  display: flex;
-  overflow: hidden;
-  height: 100vh;
-  margin-top: -100px;
-  padding-top: 100px;
-  position: relative;
-  width: 100%;
-  backface-visibility: hidden;
-  will-change: overflow;
-}
-
-.book_nav{
-  position: relative;
-  width: 100%;
-  z-index: 3;
-  padding-left: 2rem;
-}
-
-.fa-shopping-cart{
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-
-.men_content{
-  padding-left: 2rem;
-  padding-top: 2rem;
-}
-
-#overlay_men {
-  position: fixed;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;  background-color: #3797a4;
-  z-index: 2;
-  cursor: pointer;
-  padding-top: 15%;
-  padding-right: 10%;
-  text-align: center;
-}
-
-#overlay_men:hover{
-  background-color: #407088;
-
-}
-
-#men{
-  width: 50%;
-  display: flex;
-  overflow: auto;
-  height: auto;
-}
-
-
-
-
-
-#overlay_women {
-  position: fixed;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  right: 0;
-  bottom: 0;
-  background-color: #ff9a8c;
-  z-index: 2;
-  cursor: pointer;
-  padding-top: 15%;
-  padding-left: 10%;
-  text-align: center;
-}
-
-#overlay_women:hover{
-  background-color: #f05454;
-
-}
-
-#women{
-  width: 50%;
-  display: flex;
-  overflow: auto;
-  height: auto;;
-
-}
-
-.man_logo{
-  width: 35%;
-  opacity: 0.9;
-}
-
-.woman_logo{
-  width: 50%;
-  opacity: 0.9;
-}
-
-#trending_in_men{
-  margin: 2rem auto;
-}
-
-#SHAVING{
-  margin: 2rem auto;
-}
-
-#FacialFaceCleanup{
-  margin: 4rem auto 2rem auto;
-}
-
-#ourOffers{
-  margin: 2rem auto;
-}
-
-
-@media screen and (max-width:500px) {
-    #overlay_men,
-    #overlay_women{
-      padding-top: 50%;
-    }
-
-  .book_nav{
-    height: 6rem;
-  }
-
-}
 /* index.html */
 
 h1, h2, h3, h4, h5, h6, p {
@@ -527,6 +398,166 @@ h1, h2, h3, h4, h5, h6, p {
     width: auto;
   }
 
+
+}
+
+
+/* ---------------------------book.html----------------------------- */
+
+.Container{
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  margin-top: -100px;
+  padding-top: 100px;
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow;
+}
+
+.book_nav{
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  padding-left: 2rem;
+}
+
+.fa-shopping-cart{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+
+.men_content{
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+#overlay_men {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  background-color: #3797a4;
+  z-index: 2;
+  cursor: pointer;
+  padding-top: 15%;
+  padding-right: 10%;
+  text-align: center;
+}
+
+#overlay_men:hover{
+  background-color: #407088;
+
+}
+
+#men{
+  width: 50%;
+  display: flex;
+  overflow: auto;
+  height: auto;
+}
+
+
+
+
+
+#overlay_women {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background-color: #ff9a8c;
+  z-index: 2;
+  cursor: pointer;
+  padding-top: 15%;
+  padding-left: 10%;
+  text-align: center;
+}
+
+#overlay_women:hover{
+  background-color: #f05454;
+
+}
+
+#women{
+  width: 50%;
+  display: flex;
+  overflow: auto;
+  height: auto;;
+
+}
+
+.man_logo{
+  width: 35%;
+  opacity: 0.9;
+}
+
+.woman_logo{
+  width: 50%;
+  opacity: 0.9;
+}
+
+#trending_in_men{
+  margin: 2rem auto;
+}
+
+#SHAVING{
+  margin: 2rem auto;
+}
+
+#FacialFaceCleanup{
+  margin: 4rem auto 2rem auto;
+}
+
+#ourOffers{
+  margin: 2rem auto;
+}
+
+.card-text{
+  display: inline-flex;
+  margin-right: 10%;
+}
+
+
+@media screen and (max-width:500px) {
+    #overlay_men,
+    #overlay_women{
+      padding-top: 50%;
+    }
+
+  .book_nav{
+    height: 5rem;
+  }
+
+  #trending_in_men,
+  #SHAVING,
+  #FacialFaceCleanup,
+  #ourOffers{
+    font-size: 1.5rem;
+  }
+
+  .mb-2{
+    width: 80%;
+  }
+
+  .title{
+    font-size: 1rem;
+  }
+
+  .owl-carousel .owl-item img{
+    height: 12rem;
+  }
+
+  .owl-carousel{
+    text-align: center;
+  }
 
 }
 
