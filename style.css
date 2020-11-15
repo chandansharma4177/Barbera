@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .title_hr {
-    width: 80%;
+    width: 95%;
     text-align: center;
   }
 
@@ -105,7 +105,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
   }
 
-
+  .book_now{
+    margin-left: 16px;
+    margin-right: 0;
+  }
 
 }
 
@@ -461,9 +464,9 @@ h1, h2, h3, h4, h5, h6, p {
   height: auto;
 }
 
-
-
-
+.men_content_navbar{
+  padding-left: 0;
+}
 
 #overlay_women {
   position: fixed;
@@ -527,6 +530,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 @media screen and (max-width:500px) {
+  .barbera_logo_book{
+    padding-top: 0;
+  }
+
     #overlay_men,
     #overlay_women{
       padding-top: 50%;
@@ -573,7 +580,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .products{
     height: 65vh;
-
     overflow-y: auto;
 }
 
@@ -637,4 +643,19 @@ h1, h2, h3, h4, h5, h6, p {
 
 .total-price{
   text-align: right;
+}
+
+@media screen and (max-width:500px) {
+
+  .product_header .product_price,
+  .product_header .product_total,
+  .product_header .product_title,
+  .product_header .product_quantity{
+    font-size: 0.8rem;
+  }
+
+  .products{
+    height:40vh;
+  }
+
 }
