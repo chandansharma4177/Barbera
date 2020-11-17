@@ -251,7 +251,7 @@ function removeButtonFunction(){
     removeButtonClicked[i].addEventListener("click", function(event) {
 
       event.target.parentElement.parentElement.parentElement.remove();
-      var key = event.target.parentElement.parentElement.parentElement.getElementsByClassName("product_heading")[0];
+      var key = event.target.parentElement.parentElement.parentElement.getElementsByClassName("product_heading")[0].innerText;
 
       var cartItems = localStorage.getItem('itemList');
       cartItems = JSON.parse(cartItems)
