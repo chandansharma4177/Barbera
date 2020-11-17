@@ -578,11 +578,14 @@ h1, h2, h3, h4, h5, h6, p {
     overflow-y: initial
 }
 
-.products{
+.product_table{
     height: 65vh;
     overflow-y: auto;
 }
 
+.Item_price_heading{
+  margin-left: 90%;
+}
 
 .product_header{
   width: 100%;
@@ -621,6 +624,49 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 2% auto;
 }
 
+.table_content{
+  padding-left: 1rem;
+}
+
+table{
+   border-collapse: separate;
+  border-spacing: 0 20px;
+}
+
+.minus, .plus{
+  cursor:pointer;
+		width:28px;
+
+		background:#f2f2f2;
+		border-radius:8%;
+		padding:2px ;
+		border:1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+		}
+		input{
+			height:1%;
+      width: 12%;
+      text-align: center;
+      font-size: 26px;
+			border:1px solid #ddd;
+			border-radius:4px;
+      display: inline-block;
+      vertical-align: middle;}
+
+ input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+
 
 .product{
   width: 45%;
@@ -637,12 +683,17 @@ h1, h2, h3, h4, h5, h6, p {
 
 }
 
-.remove_button{
-  width: 40%;
-}
 
 .total-price{
   text-align: right;
+  margin-top:10px;
+  margin-right: 20px;
+}
+
+.item_total_price{
+  text-align: right;
+  padding-right: 10px;
+  width: 20%;
 }
 
 @media screen and (max-width:500px) {
@@ -654,8 +705,23 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 0.8rem;
   }
 
-  .products{
+  .product_table{
     height:40vh;
+  }
+
+  .modal-body h5,
+  .modal-body span{
+    font-size: 0.8rem;
+  }
+
+  .remove_button{
+    padding: 3px 6px;
+    margin-top: 5px;
+  }
+
+  .modal-body input{
+    font-size: 18px;
+
   }
 
 }

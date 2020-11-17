@@ -1,11 +1,50 @@
-// if(document.readyState == "loading"){
-//   document.addEventListener('DOMContentLoaded' , ready)
-// }else{
-//   ready();
+$(document).ready(function() {
+    $('.minus').click(function () {
+      var $input = $(this).parent().find('input');
+      var count = parseInt($input.val()) - 1;
+      count = count < 1 ? 1 : count;
+      $input.val(count);
+      $input.change();
+      quantityChangeFunction();
+      return false;
+
+    });
+    $('.plus').click(function () {
+
+      var $input = $(this).parent().find('input');
+      $input.val(parseInt($input.val()) + 1);
+      $input.change();
+
+      quantityChangeFunction();
+      return false;
+
+
+    });
+  });
+
+
+// // Your web app's Firebase configuration
+//  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//  var firebaseConfig = {
+//    apiKey: "AIzaSyAbwiGQ4qu1EDLDv6h112c-fP_rwfDxKW8",
+//    authDomain: "barbera-592f4.firebaseapp.com",
+//    databaseURL: "https://barbera-592f4.firebaseio.com",
+//    projectId: "barbera-592f4",
+//    storageBucket: "barbera-592f4.appspot.com",
+//    messagingSenderId: "799959754313",
+//    appId: "1:799959754313:web:1cc1a9405c320715680198",
+//    measurementId: "G-9XMDWD517K"
+//  };
+//  // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+//
+// var database = firebase.database();
+//  var ref = database.ref("")
+// ref.on('value' , gotData)
+//
+// function gotData(data){
+//   console.log(data);
 // }
-
-// book.html
-
 
 
 
@@ -19,15 +58,13 @@ function off_men() {
   document.getElementById("overlay_women").style.padding = "20% 0";
   // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
   $('.owl-carousel').owlCarousel({
-
-
-    margin:30,
+    loop:true,
+    margin:10,
     responsiveClass:true,
     responsive:{
         0:{
             items:1,
-            nav:false,
-          
+            nav:false
         },
         600:{
             items:2,
@@ -36,6 +73,7 @@ function off_men() {
         1000:{
             items:4,
             nav:true,
+            loop:false
         }
     }
 })
@@ -53,6 +91,11 @@ function off_women() {
   document.getElementById("overlay_men").style.right = "80%";
   document.getElementById("overlay_men").style.padding = "20% 0";
 }
+
+
+
+
+
 
 
 // --------------------------------------------cart.html----------------------------------------------------
@@ -129,28 +172,35 @@ function addItemToLocalStorage(event) {
 function displayCart() {
   var cartItems = localStorage.getItem("itemList");
   cartItems = JSON.parse(cartItems);
-  var productContainer = document.querySelector(".products");
+
+  var productContainer = document.querySelector("table");
   if (cartItems && productContainer) {
     productContainer.innerHTML = '';
     Object.values(cartItems).map(item => {
       productContainer.innerHTML += `
-      <div class="product_item">
-      <div class="product"><img class="cart_image" src="images/hair_cut.png" alt="Suresh Dasari Card">${item.title_name}</div>
-      <div class="product_price">${item.price_value}</div>
 
-      <div class="product_quantity">
-        <input type="number" class="quant" value="1" min="1" style="width:48px; margin-right:2rem;">
-        <button class="btn btn-danger remove_button">Remove</button>
-       </div>
+      <tr>
+        <td style="width:20%;">  <img class="card-img" src="images/hair_cut.png" alt="Suresh Dasari Card">
+           </td>
+        <td class="table_content"> <h5 class="product_heading">${item.title_name}</h5>
+        <h5 class="procuct_price">${item.price_value}</h5>
 
-       <div class="product_total item_total">
-        <span> ${item.price_value}</span>
-       </div>
-      </div>
+
+        <span class="minus ">-</span>
+        <input type="number" value="1" class="quant"/>
+        <span class="plus">+</span>
+
+        <button class="btn btn-danger remove_button"> <span>Remove</span> </button>
+       </td>
+       <td class="item_total_price"><h5 class="item_total">${item.price_value}</h5> </td>
+
+      </tr>
 
       `
     })
   }
+
+
   quantityChangeFunction()
   removeButtonFunction()
   totalPrice()
@@ -162,9 +212,10 @@ function displayCart() {
 
 function quantityChangeFunction(){
   var quantityChanged = $(".quant");
+
   for (var i = 0; i < quantityChanged.length; i++) {
 
-    quantityChanged[i].addEventListener('change', updateQuantity);
+    updateQuantity(quantityChanged[i]);
   }
 }
 
@@ -177,9 +228,8 @@ function removeButtonFunction(){
   for (var i = 0; i < removeButtonClicked.length; i++) {
     removeButtonClicked[i].addEventListener("click", function(event) {
 
-      event.target.parentElement.parentElement.remove();
-      var key = event.target.parentElement.parentElement.getElementsByClassName("product")[0].innerText;
-
+      event.target.parentElement.parentElement.parentElement.remove();
+      var key = event.target.parentElement.parentElement.parentElement.getElementsByClassName("product_heading")[0];
 
       var cartItems = localStorage.getItem('itemList');
       cartItems = JSON.parse(cartItems)
@@ -202,21 +252,20 @@ function removeButtonFunction(){
 }
 
 
-function updateQuantity(event) {
-  var input = event.target;
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1;
-  }
+function updateQuantity(input) {
 
-  var parentInput = this.parentElement.parentElement
+
+
+  var parentInput = input.parentElement.parentElement
   var itemTotal = parentInput.getElementsByClassName("item_total")[0];
-  var priceValue = parseFloat(parentInput.getElementsByClassName("product_price")[0].innerText.replace("Rs ", ""));
+
+  var priceValue = parseFloat(parentInput.getElementsByClassName("procuct_price")[0].innerText.replace("Rs ", ""));
+
   var quantity = parentInput.getElementsByClassName("quant")[0].value;
   var total = 0;
   total = priceValue * quantity;
   itemTotal.innerText = "Rs " + total;
   totalPrice()
-
 }
 
 function totalPrice(){
@@ -225,6 +274,7 @@ function totalPrice(){
   for(var i=0; i<totalPricePerItem.length; i++){
       total_price += parseInt(totalPricePerItem[i].innerText.replace("Rs ", ""));
   }
+
   $(".total-price span")[0].innerText = "Rs "+ total_price;
 }
 
