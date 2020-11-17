@@ -1,4 +1,5 @@
-$(document).ready(function() {
+function plus_minus() {
+  if($('.minus')[0] != null){
     $('.minus')[0].addEventListener("click"  , function () {
       var $input = $(this).parent().find('input');
       var count = parseInt($input.val()) - 1;
@@ -9,6 +10,19 @@ $(document).ready(function() {
       return false;
 
     });
+    $('.minus')[0].addEventListener("tap"  , function () {
+      var $input = $(this).parent().find('input');
+      var count = parseInt($input.val()) - 1;
+      count = count < 1 ? 1 : count;
+      $input.val(count);
+      $input.change();
+      quantityChangeFunction();
+      return false;
+
+    });
+  }
+
+  if($('.plus')[0] != null){
     $('.plus')[0].addEventListener("click", function () {
 
       var $input = $(this).parent().find('input');
@@ -21,16 +35,7 @@ $(document).ready(function() {
 
     });
 
-    $('.minus')[0].addEventListener("tap"  , function () {
-      var $input = $(this).parent().find('input');
-      var count = parseInt($input.val()) - 1;
-      count = count < 1 ? 1 : count;
-      $input.val(count);
-      $input.change();
-      quantityChangeFunction();
-      return false;
 
-    });
     $('.plus')[0].addEventListener("tap", function () {
 
       var $input = $(this).parent().find('input');
@@ -42,7 +47,9 @@ $(document).ready(function() {
 
 
     });
-  });
+  }
+
+  };
 
 
 // // Your web app's Firebase configuration
@@ -131,11 +138,12 @@ for (var i = 0; i < changeCartItemNumber.length; i++) {
 
 function onLoadCartNumber() {
   var previousItemsCount = parseInt(localStorage.getItem('cartItemNumbers'));
-  if (previousItemsCount) {
+  if (previousItemsCount > 0) {
     $(".cart span")[0].textContent = previousItemsCount;
   }
-  else if(previousItemsCount === 0){
-    $(".cart span")[0].textContent = previousItemsCount;
+  else if(previousItemsCount <= 0){
+    $(".cart span")[0].textContent = 0;
+    localStorage.setItem('cartItemNumbers', 0);
   }
 }
 
@@ -226,6 +234,7 @@ function displayCart() {
   quantityChangeFunction()
   removeButtonFunction()
   totalPrice()
+  plus_minus()
 
 }
 
