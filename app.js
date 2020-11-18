@@ -1,6 +1,6 @@
 function plus_minus() {
-  if($('.minus')[0] != null){
-    $('.minus')[0].addEventListener("click"  , function () {
+  for (var i =0; i<$('.minus').length; i++){
+    $('.minus')[i].addEventListener("click"  , function () {
       var $input = $(this).parent().find('input');
       var count = parseInt($input.val()) - 1;
       count = count < 1 ? 1 : count;
@@ -10,7 +10,7 @@ function plus_minus() {
       return false;
 
     });
-    $('.minus')[0].addEventListener("tap"  , function () {
+    $('.minus')[i].addEventListener("tap"  , function () {
       var $input = $(this).parent().find('input');
       var count = parseInt($input.val()) - 1;
       count = count < 1 ? 1 : count;
@@ -22,8 +22,8 @@ function plus_minus() {
     });
   }
 
-  if($('.plus')[0] != null){
-    $('.plus')[0].addEventListener("click", function () {
+  for (var i =0; i<$('.minus').length; i++){
+    $('.plus')[i].addEventListener("click", function () {
 
       var $input = $(this).parent().find('input');
       $input.val(parseInt($input.val()) + 1);
@@ -36,7 +36,7 @@ function plus_minus() {
     });
 
 
-    $('.plus')[0].addEventListener("tap", function () {
+    $('.plus')[i].addEventListener("tap", function () {
 
       var $input = $(this).parent().find('input');
       $input.val(parseInt($input.val()) + 1);
@@ -44,36 +44,10 @@ function plus_minus() {
 
       quantityChangeFunction();
       return false;
-
-
     });
   }
 
-  };
-
-
-// // Your web app's Firebase configuration
-//  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-//  var firebaseConfig = {
-//    apiKey: "AIzaSyAbwiGQ4qu1EDLDv6h112c-fP_rwfDxKW8",
-//    authDomain: "barbera-592f4.firebaseapp.com",
-//    databaseURL: "https://barbera-592f4.firebaseio.com",
-//    projectId: "barbera-592f4",
-//    storageBucket: "barbera-592f4.appspot.com",
-//    messagingSenderId: "799959754313",
-//    appId: "1:799959754313:web:1cc1a9405c320715680198",
-//    measurementId: "G-9XMDWD517K"
-//  };
-//  // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-//
-// var database = firebase.database();
-//  var ref = database.ref("")
-// ref.on('value' , gotData)
-//
-// function gotData(data){
-//   console.log(data);
-// }
+}
 
 
 
@@ -285,8 +259,6 @@ function removeButtonFunction(){
 
 function updateQuantity(input) {
 
-
-
   var parentInput = input.parentElement.parentElement
   var itemTotal = parentInput.getElementsByClassName("item_total")[0];
 
@@ -297,6 +269,7 @@ function updateQuantity(input) {
   total = priceValue * quantity;
   itemTotal.innerText = "Rs " + total;
   totalPrice()
+
 }
 
 function totalPrice(){
