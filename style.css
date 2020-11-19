@@ -523,11 +523,29 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 2rem auto;
 }
 
+#trending_in_men,
+#SHAVING,
+#FacialFaceCleanup,
+#ourOffers{
+  font-size: 2rem;
+}
+
 .card-text{
   display: inline-flex;
   margin-right: 10%;
 }
 
+.title{
+  font-size: 1.3rem;
+}
+
+.card-body span{
+  margin-right: 10px;
+}
+
+.owl-nav button span{
+  font-size: 2rem;
+}
 
 @media screen and (max-width:500px) {
   .barbera_logo_book{
