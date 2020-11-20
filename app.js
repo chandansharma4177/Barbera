@@ -65,104 +65,64 @@ function plus_minus() {
  };
 
 var trendingInMenContainer = [4, 5, 7, 10, 12, 16, 22]
-var trendingInMenContent = document.querySelector("#trendingInMen");
-trendingInMenContent.classList.add("owl-carousel")
-trendingInMenContent.classList.add("owl-theme")
-
 
 var shavingContainer = [8, 9];
-var shavingContent = document.querySelector("#Shaving")
-shavingContent.classList.add("owl-carousel")
-shavingContent.classList.add("owl-theme")
-
 
 var facialAndFaceCleanupContainer = [17, 18, 19, 20, 21]
-var facialAndFaceCleanupContent = document.querySelector("#FacialAndFaceCleanup")
-facialAndFaceCleanupContent.classList.add("owl-carousel")
-facialAndFaceCleanupContent.classList.add("owl-theme")
-
 
 var offersContainer = [23, 24, 25]
-var offersContent = document.querySelector("#SpecialOffers")
-offersContent.classList.add("owl-carousel")
-offersContent.classList.add("owl-theme")
-
 
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
  var db = firebase.firestore();
  db.collection("Men\'s Salon").orderBy("index").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      if (trendingInMenContent){
+
         for (var i=0; i<trendingInMenContainer.length; i++){
 
           if(doc.data().index === trendingInMenContainer[i]){
 
-            trendingInMenContent.innerHTML +=`
-            <div class="card mb-2 ">
-              <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-              <div class="card-body">
-                <h4 class="title">${doc.data().Service_title}</h4>
+            var position = document.getElementById(trendingInMenContainer[i]);
 
-                <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-                <span><del>Rs ${doc.data().cut_price}</del></span>
-                <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-              </div>
-            </div>
-            `
+            var title = position.querySelector(".title").innerText = doc.data().Service_title;
+            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+            var imgSrc = position.querySelector(".card-img").src = doc.data().icon
           }
         }
-      }
+
 
 
       for (var i=0; i<shavingContainer.length; i++){
         if(doc.data().index === shavingContainer[i]){
-          shavingContent.innerHTML +=`
-          <div class="card mb-2 ">
-            <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-            <div class="card-body">
-              <h4 class="title">${doc.data().Service_title}</h4>
+          var position = document.getElementById(shavingContainer[i]);
 
-              <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-              <span><del>Rs ${doc.data().cut_price}</del></span>
-              <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-            </div>
-          </div>
-          `
+            var title = position.querySelector(".title").innerText = doc.data().Service_title;
+            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+            var imgSrc = position.querySelector(".card-img").src = doc.data().icon
         }
       }
 
       for (var i=0; i<facialAndFaceCleanupContainer.length; i++){
         if(doc.data().index === facialAndFaceCleanupContainer[i]){
-          facialAndFaceCleanupContent.innerHTML +=`
-          <div class="card mb-2 ">
-            <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-            <div class="card-body">
-              <h4 class="title">${doc.data().Service_title}</h4>
+          var position = document.getElementById(facialAndFaceCleanupContainer[i]);
 
-              <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-              <span><del>Rs ${doc.data().cut_price}</del></span>
-              <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-            </div>
-          </div>
-          `
+            var title = position.querySelector(".title").innerText = doc.data().Service_title;
+            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+            var imgSrc = position.querySelector(".card-img").src = doc.data().icon
         }
       }
 
       for (var i=0; i<offersContainer.length; i++){
         if(doc.data().index === offersContainer[i]){
-          offersContent.innerHTML +=`
-          <div class="card mb-2 ">
-            <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-            <div class="card-body">
-              <h4 class="title">${doc.data().Service_title}</h4>
+          var position = document.getElementById(offersContainer[i]);
 
-              <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-              <span><del>Rs ${doc.data().cut_price}</del></span>
-              <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-            </div>
-          </div>
-          `
+            var title = position.querySelector(".title").innerText = doc.data().Service_title;
+            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                        var imgSrc = position.querySelector(".card-img").src = doc.data().icon
         }
       }
 
@@ -170,64 +130,28 @@ offersContent.classList.add("owl-theme")
 });
 
 var trendingInWomenList = [34, 35, 38, 39, 44, 43, 42, 47, 51, 56, 76, 79, 83, 87, 104, 108]
-var trendingInWomenContent = document.querySelector("#TrendingInWomen");
-trendingInWomenContent.classList.add("owl-carousel")
-trendingInWomenContent.classList.add("owl-theme")
 
 var hairStylingList = [36, 37, 38, 45, 46, 47, 48, 49, 50, 40, 41]
-var hairStylingContent = document.querySelector("#hair_styling");
-hairStylingContent.classList.add("owl-carousel")
-hairStylingContent.classList.add("owl-theme")
 
 var threadingList = [51, 52, 53, 54, 55]
-var threadingContent = document.querySelector("#threading");
-threadingContent.classList.add("owl-carousel")
-threadingContent.classList.add("owl-theme")
 
 var normalWaxingList = [56, 57, 58, 59, 60, 61, 62]
-var normalWaxingContent = document.querySelector("#normalWaxing");
-normalWaxingContent.classList.add("owl-carousel")
-normalWaxingContent.classList.add("owl-theme")
 
 var milkWaxingList = [63, 64, 65, 66, 67, 68]
-var milkWaxingContent = document.querySelector("#milkWaxing");
-milkWaxingContent.classList.add("owl-carousel")
-milkWaxingContent.classList.add("owl-theme")
 
 var ricaWaxingList = [69, 70, 71, 72, 73, 74]
-var ricaWaxingContent = document.querySelector("#ricaWaxing");
-ricaWaxingContent.classList.add("owl-carousel")
-ricaWaxingContent.classList.add("owl-theme")
 
 var manicurePedicureList = [75, 76, 77, 78, 79, 80]
-var manicurePedicureContent = document.querySelector("#manicure_pedicure");
-manicurePedicureContent.classList.add("owl-carousel")
-manicurePedicureContent.classList.add("owl-theme")
 
 var arabicMehandiList = [81, 82, 83, 84, 85, 94, 98, 96]
-var arabicMehandiContent = document.querySelector("#arabicMehandi");
-arabicMehandiContent.classList.add("owl-carousel")
-arabicMehandiContent.classList.add("owl-theme")
 
 var roundMehandiList = [86, 87, 88, 89, 97, 95, 99]
-var roundMehandiContent = document.querySelector("#roundMehandi");
-roundMehandiContent.classList.add("owl-carousel")
-roundMehandiContent.classList.add("owl-theme")
 
 var bharvaMehandiList = [ 91, 92, 93, 100, 101, 102]
-var bharvaMehandiContent = document.querySelector("#bharvaMehandi");
-bharvaMehandiContent.classList.add("owl-carousel")
-bharvaMehandiContent.classList.add("owl-theme")
 
 var bleachFacialList = [103, 104, 105, 106, 107, 108, 109, 110, 111]
-var bleachFacialContent = document.querySelector("#bleach_facial");
-bleachFacialContent.classList.add("owl-carousel")
-bleachFacialContent.classList.add("owl-theme")
 
 var womenOffersList = [112, 113, 115, 116, 117, 118, 119]
-var womenOffersContent = document.querySelector("#womenOffers");
-womenOffersContent.classList.add("owl-carousel")
-womenOffersContent.classList.add("owl-theme")
 
 
 db.collection("Women\'s Salon").orderBy("index").get().then((querySnapshot) => {
@@ -236,206 +160,133 @@ db.collection("Women\'s Salon").orderBy("index").get().then((querySnapshot) => {
        for (var i=0; i<trendingInWomenList.length; i++){
 
          if(doc.data().index === trendingInWomenList[i]){
+           var position = document.getElementById(trendingInWomenList[i]);
 
-           trendingInWomenContent.innerHTML +=`
-           <div class="card mb-2 ">
-             <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-             <div class="card-body">
-               <h4 class="title">${doc.data().Service_title}</h4>
-
-               <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-               <span><del>Rs ${doc.data().cut_price}</del></span>
-               <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-             </div>
-           </div>
-           `
+           var title = position.querySelector(".title").innerText = doc.data().Service_title;
+           var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+           var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                      var imgSrc = position.querySelector(".card-img").src = doc.data().icon
          }
        }
 
      for (var i=0; i<hairStylingList.length; i++){
        if(doc.data().index === hairStylingList[i]){
-         hairStylingContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(hairStylingList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<threadingList.length; i++){
        if(doc.data().index === threadingList[i]){
-         threadingContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(threadingList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<normalWaxingList.length; i++){
        if(doc.data().index === normalWaxingList[i]){
-         normalWaxingContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(normalWaxingList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<milkWaxingList.length; i++){
        if(doc.data().index === milkWaxingList[i]){
-         milkWaxingContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(milkWaxingList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<ricaWaxingList.length; i++){
        if(doc.data().index === ricaWaxingList[i]){
-         ricaWaxingContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(ricaWaxingList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<manicurePedicureList.length; i++){
        if(doc.data().index === manicurePedicureList[i]){
-         manicurePedicureContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(manicurePedicureList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<arabicMehandiList.length; i++){
        if(doc.data().index === arabicMehandiList[i]){
-         arabicMehandiContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(arabicMehandiList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<roundMehandiList.length; i++){
        if(doc.data().index === roundMehandiList[i]){
-         roundMehandiContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(roundMehandiList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<bharvaMehandiList.length; i++){
        if(doc.data().index === bharvaMehandiList[i]){
-         bharvaMehandiContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(bharvaMehandiList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<bleachFacialList.length; i++){
        if(doc.data().index === bleachFacialList[i]){
-         bleachFacialContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(bleachFacialList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
      for (var i=0; i<womenOffersList.length; i++){
        if(doc.data().index === womenOffersList[i]){
-         womenOffersContent.innerHTML +=`
-         <div class="card mb-2 ">
-           <img class="card-img" src="${doc.data().icon}" alt="Suresh Dasari Card">
-           <div class="card-body">
-             <h4 class="title">${doc.data().Service_title}</h4>
+         var position = document.getElementById(womenOffersList[i]);
 
-             <p class="card-text"><strong>Rs ${doc.data().price} </strong> </p>
-             <span><del>Rs ${doc.data().cut_price}</del></span>
-             <button class="btn btn-primary cart_item" onclick = "change_cart_item_number()">Add to cart</button>
-           </div>
-         </div>
-         `
+         var title = position.querySelector(".title").innerText = doc.data().Service_title;
+         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
        }
      }
 
@@ -556,10 +407,12 @@ function changeCartNumber() {
 function addItemToLocalStorage(event) {
   var input = event.target;
   var parent = input.parentElement;
+  var imageLocation = parent.parentElement.getElementsByClassName("card-img")[0].src
   var title = parent.getElementsByClassName("title")[0].innerText;
   var price = parent.getElementsByClassName("card-text")[0].innerText;
 
   var itemToList = {
+    image_location: imageLocation,
     title_name: title,
     price_value: price
   }
@@ -602,7 +455,7 @@ function displayCart() {
       productContainer.innerHTML += `
 
       <tr>
-        <td style="width:20%;">  <img class="card-img" src="images/hair_cut.png" alt="Suresh Dasari Card">
+        <td style="width:20%;">  <img  class="card-img" src=${item.image_location} alt="Suresh Dasari Card">
            </td>
         <td class="table_content"> <h5 class="product_heading">${item.title_name}</h5>
         <h5 class="procuct_price">${item.price_value}</h5>

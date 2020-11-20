@@ -462,6 +462,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   overflow: auto;
   height: auto;
+  background-color: #eeeded;
 }
 
 .men_content_navbar{
@@ -494,7 +495,8 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   overflow: auto;
   overflow-x: hidden;
-  height: auto;;
+  height: auto;
+  background-color: #eeeded;
 
 }
 
@@ -508,27 +510,25 @@ h1, h2, h3, h4, h5, h6, p {
   opacity: 0.9;
 }
 
-#trending_in_men{
-  margin: 2rem auto;
+
+.backgroundColor{
+  background-color: #fff;
+  padding: 5px;
 }
 
-#SHAVING{
-  margin: 2rem auto;
+.mb-2{
+  border-radius: 10%;
 }
 
-#FacialFaceCleanup{
-  margin: 4rem auto 2rem auto;
+.mb-2 .card-img{
+  border-radius: 10%;
 }
 
-#ourOffers{
-  margin: 2rem auto;
-}
 
-#trending_in_men,
-#SHAVING,
-#FacialFaceCleanup,
-#ourOffers{
+.heading{
   font-size: 2rem;
+  margin: 2rem auto;
+
 }
 
 .card-text{
@@ -562,15 +562,17 @@ h1, h2, h3, h4, h5, h6, p {
     height: 4rem;
   }
 
-  #trending_in_men,
-  #SHAVING,
-  #FacialFaceCleanup,
-  #ourOffers{
+  .heading{
     font-size: 1.5rem;
+  }
+
+  .backgroundColor{
+    text-align: center;
   }
 
   .mb-2{
     width: 80%;
+    margin-left: 20px;
   }
 
   .title{
@@ -741,6 +743,10 @@ input[type=number]::-webkit-outer-spin-button {
   .modal-body input{
     font-size: 18px;
 
+  }
+
+  .modal-body .card-img{
+    height: 17%;
   }
 
 }
