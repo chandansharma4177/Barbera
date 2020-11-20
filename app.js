@@ -110,9 +110,7 @@ offersContent.classList.add("owl-theme")
               </div>
             </div>
             `
-
           }
-
         }
       }
 
@@ -458,7 +456,7 @@ function off_men() {
   document.getElementById("overlay_women").style.left = "80%";
   document.getElementById("overlay_women").style.padding = "20% 0";
   // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
-  $('.owl-carousel').owlCarousel({
+  $('#men .owl-carousel').owlCarousel({
     loop:true,
     margin:10,
     responsiveClass:true,
@@ -491,6 +489,27 @@ function off_women() {
   document.getElementById("overlay_men").style.width = "20%";
   document.getElementById("overlay_men").style.right = "80%";
   document.getElementById("overlay_men").style.padding = "20% 0";
+
+  $('#women .owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:true,
+            loop:false
+        }
+    }
+})
 }
 
 
