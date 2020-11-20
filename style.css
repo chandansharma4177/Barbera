@@ -493,6 +493,7 @@ h1, h2, h3, h4, h5, h6, p {
   width: 50%;
   display: flex;
   overflow: auto;
+  overflow-x: hidden;
   height: auto;;
 
 }
