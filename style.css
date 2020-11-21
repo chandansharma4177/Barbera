@@ -444,16 +444,19 @@ h1, h2, h3, h4, h5, h6, p {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;  background-color: #3797a4;
+  bottom: 0;
+  background-image: url("images/background_men.jpg");
+ /* background-color: #3797a4; */
   z-index: 2;
-  cursor: pointer;
-  padding-top: 15%;
-  padding-right: 10%;
+
+  padding-top: 10%;
+
   text-align: center;
 }
 
 #overlay_men:hover{
   background-color: #407088;
+
 
 }
 
@@ -477,11 +480,11 @@ h1, h2, h3, h4, h5, h6, p {
   left: 50%;
   right: 0;
   bottom: 0;
-  background-color: #ff9a8c;
+  background-image: url("images/background_women.jpg");
+  /* background-color: #ff9a8c; */
   z-index: 2;
-  cursor: pointer;
-  padding-top: 15%;
-  padding-left: 10%;
+  padding-top: 10%;
+
   text-align: center;
 }
 
@@ -501,13 +504,20 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .man_logo{
-  width: 35%;
+  width: 50%;
   opacity: 0.9;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .woman_logo{
-  width: 50%;
+  width: 40%;
   opacity: 0.9;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5.5%;
+  display: block;
 }
 
 
@@ -544,8 +554,16 @@ h1, h2, h3, h4, h5, h6, p {
   margin-right: 10px;
 }
 
+del{
+  color: #aaaaaa;
+}
+
 .owl-nav button span{
   font-size: 2rem;
+}
+
+.barbera_logo_book strong{
+  color: #fff;
 }
 
 @media screen and (max-width:500px) {
@@ -555,15 +573,16 @@ h1, h2, h3, h4, h5, h6, p {
 
     #overlay_men,
     #overlay_women{
-      padding-top: 50%;
+      padding-top: 60%;
     }
 
   .book_nav{
-    height: 4rem;
+    height: 3.5rem;
   }
 
   .heading{
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .backgroundColor{
@@ -589,6 +608,29 @@ h1, h2, h3, h4, h5, h6, p {
 
   .card-text{
     margin-right:0;
+  }
+
+  .btn-dark{
+    /* width: 60%; */
+    padding: 2px;
+    padding-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+  }
+
+  .btn-dark span{
+    font-size: 0.8rem;
+  }
+
+  .woman_logo{
+    margin-bottom: 10%;
+    width: 82%;
+  }
+
+  .man_logo{
+    width: 100%;
   }
 
 }
