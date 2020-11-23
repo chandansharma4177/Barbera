@@ -659,12 +659,14 @@ del{
     overflow-y: initial
 }
 
-.product_table{
+.product_table
+{
     height: 65vh;
     overflow-y: auto;
 }
 
-.Item_price_heading{
+.Item_price_heading,
+.final_item_price_heading{
   margin-left: 90%;
 }
 
@@ -765,7 +767,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-.total-price{
+.total-price,
+.final-price{
   text-align: right;
   margin-top:10px;
   margin-right: 20px;
@@ -791,7 +794,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .modal-body h5,
-  .modal-body span{
+  .modal-body span,
+  .final_product_table{
     font-size: 0.8rem;
   }
 

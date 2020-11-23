@@ -410,11 +410,13 @@ function addItemToLocalStorage(event) {
   var imageLocation = parent.parentElement.getElementsByClassName("card-img")[0].src
   var title = parent.getElementsByClassName("title")[0].innerText;
   var price = parent.getElementsByClassName("card-text")[0].innerText;
+  var quantity = 1;
 
   var itemToList = {
     image_location: imageLocation,
     title_name: title,
-    price_value: price
+    price_value: price,
+    quantity_value: quantity
   }
 
   var cartItems = localStorage.getItem('itemList');
@@ -541,6 +543,15 @@ function updateQuantity(input) {
   itemTotal.innerText = "Rs " + total;
   totalPrice()
 
+
+  var quantityTotalTitle = parentInput.getElementsByClassName("product_heading")[0].innerText;
+  var cartItems = localStorage.getItem('itemList');
+  cartItems = JSON.parse(cartItems);
+  cartItems[quantityTotalTitle].quantity_value = quantity;
+
+localStorage.setItem('itemList', JSON.stringify(cartItems));
+
+
 }
 
 function totalPrice(){
@@ -552,6 +563,8 @@ function totalPrice(){
 
   $(".total-price span")[0].innerText = "Rs "+ total_price;
 }
+
+
 
 
 displayCart()
