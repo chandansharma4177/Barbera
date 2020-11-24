@@ -860,5 +860,6 @@ input[type=number]::-webkit-outer-spin-button {
   .timepicker{
     width: 50%;
     height: 10%;
+    
   }
 }
