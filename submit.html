@@ -37,12 +37,12 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <table class="final_product_table">
+          <table class="final_product_table" style="width:100%">
             <tr>
 
-              <td style="padding-left: 1rem;">Item </td>
-              <td>Quantity </td>
-              <td>Item Price </td>
+              <td style="padding-left: 1rem; width:55%;">Item </td>
+              <td style="width:25%;">Quantity </td>
+              <td style="width:20%;">Item Price </td>
             </tr>
             <tr>
 
@@ -58,13 +58,35 @@
           </div>
         </div>
         <div class="col-lg-6 choose_date">
-           <input type="text" class="datepicker "  value="Choose a Date" style="margin-top:20%;">
-           <p class="dateDisplay" style="margin-bottom:10%;"></p>
+          <label for="Name" style="margin-top:5%;">
+            Name:
+          <input type="text" class="name" name="" value="">
+        </label>
+        <br>
 
-          <input type="text" class="timepicker "  value="Choose a Time">
-          <p style="margin-bottom:40%;">Choose a time</p>
+          <label for="Mobile Number">
+            Mobile No. :
+            <input type="number" class="mobile" name="" value="">
+          </label>
+            <br>
+          <label for="Address">
+            Address:
+            <br>
+            <textarea name="name" rows="3" cols="40" class="address"></textarea>
+          </label>
+          <br>
+          <label for="Date">
+            Date:
+            <input  class="datepicker " value="dd/mm/yy"  >
+          </label>
+          <br>
+           <label for="Time" class="time">
+             Time:<input type="time"  class="timepicker">
 
-          <button type="button" name="button" class="btn btn-success" style="width:100%;">Submit</button>
+           </label>
+
+
+          <button type="button" name="button"  class="btn btn-success submitButton" style="width:100%; margin-bottom:5%">Submit</button>
 
 
         </div>

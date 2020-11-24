@@ -835,17 +835,48 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .choose_date{
-  text-align: center;
+  /* text-align: center; */
+}
+
+.choose_date input{
+  text-align: left;
+}
+
+.name,
+.mobile{
+
+  width: 50%;
+  height: 6%;
 }
 
 .datepicker,
-.timepicker{
-  width: 30%;
+.timepicker
+{
+  width: 40%;
   height: 6%;
   cursor: pointer;
-  color: #fff;
-  background-color: #000;
+  color: #000;
   border-radius: 5%;
+}
+
+.timepicker{
+  color: #000;
+  width: 70%;
+  /* margin-bottom: 10%; */
+}
+
+.address{
+  background-color: #fff;
+  color: #000;
+  /* margin-bottom: 30%; */
+}
+
+.choose_date input{
+  font-size: 1.2rem;
+}
+
+.time{
+  margin-bottom: 8%;
 }
 
 @media screen and (max-width:500px){
@@ -857,9 +888,21 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .datepicker,
-  .timepicker{
+  .name,
+  .mobile{
     width: 50%;
-    height: 10%;
-    
+  }
+
+  .timepicker{
+    margin-left: 3px;
+    width: 33%;
+  }
+
+  .time{
+    width: 80%;
+  }
+
+  .choose_date input{
+    font-size: 0.8rem
   }
 }
