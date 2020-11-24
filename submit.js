@@ -12,15 +12,14 @@ function dsisplayFinalCart(){
     totalPayableMoney += totalPriceOfItem;
     finalTable.innerHTML +=`
     <tr>
-      <td style="width:20%;">  <img  class="card-img" src=${item.image_location} alt="Suresh Dasari Card">
-         </td>
-      <td class="table_content"> <h5 class="product_heading">${item.title_name}</h5>
-      <h5 class="procuct_price">${item.price_value}</h5>
+
+      <td class="table_content" style="width:55%;"> <h5 class="final_product_heading">${item.title_name}</h5>
+      <h5 class="final_product_price">${item.price_value}</h5>
 
      </td>
 
-     <td> ${item.quantity_value} </td>
-     <td class="item_total_price"><h5 class="item_total">Rs ${totalPriceOfItem}</h5> </td>
+     <td class="final_quantity_value" style="width:25%;"> ${item.quantity_value} </td>
+     <td class="final_item_total_price" style="width:20%;">Rs ${totalPriceOfItem} </td>
 
     </tr>
     `
@@ -30,3 +29,30 @@ function dsisplayFinalCart(){
 }
 
 dsisplayFinalCart()
+
+
+// var date = new Date();
+// date.setDate(date.getDate()-1);
+//
+// console.log(date);
+// // $(".datepicker").value = date;
+// $('.datepicker').datepicker({
+//   format: "mm/dd/yyyy",
+//   startDate:date
+// });
+
+var date = new Date();
+
+var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+$('.datepicker').datepicker({
+  dateFormat: "dd/mm/yy",
+
+    minDate: today
+});
+
+
+$(".dateDisplay")[0].innerText = $(".datepicker")[0].value
+
+
+$('.timepicker').wickedpicker();

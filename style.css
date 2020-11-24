@@ -794,8 +794,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .modal-body h5,
-  .modal-body span,
-  .final_product_table{
+  .modal-body span
+  {
     font-size: 0.8rem;
   }
 
@@ -813,4 +813,52 @@ input[type=number]::-webkit-outer-spin-button {
     height: 17%;
   } */
 
+}
+
+
+/* ------------------------------------------------submit html-------------------------------------------- */
+
+.final_product_heading{
+
+}
+
+.final_product_price{
+
+}
+
+.final_quantity_value{
+
+}
+
+.final_item_total_price{
+
+}
+
+.choose_date{
+  text-align: center;
+}
+
+.datepicker,
+.timepicker{
+  width: 30%;
+  height: 6%;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  border-radius: 5%;
+}
+
+@media screen and (max-width:500px){
+  .final_product_price,
+  .final_product_heading,
+  .final_item_total_price,
+  .final_quantity_value{
+    font-size: 0.8rem;
+  }
+
+  .datepicker,
+  .timepicker{
+    width: 50%;
+    height: 10%;
+  }
 }
