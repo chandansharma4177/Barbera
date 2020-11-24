@@ -30,11 +30,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 }
 
-.title_h1 {
-  font-family: 'B612', sans-serif;
-  font-size: 500%;
-  font-weight: 700;
-  color: #ebebeb;
+.title_h1 img {
+
+  width:91%;
+  margin-top:-9%
 }
 
 .title_p {
@@ -76,8 +75,8 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
   }
 
-  .title_h1 {
-    font-size: 400%;
+  .title_h1 img {
+
     text-align: center;
   }
 
@@ -861,7 +860,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .timepicker{
   color: #000;
-  width: 70%;
+  width: 25%;
   /* margin-bottom: 10%; */
 }
 
@@ -876,8 +875,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .time{
+  width: 80%;
   margin-bottom: 8%;
 }
+
+
 
 @media screen and (max-width:500px){
   .final_product_price,
@@ -894,8 +896,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .timepicker{
-    margin-left: 3px;
-    width: 33%;
+
+    width: 45%;
   }
 
   .time{
@@ -904,5 +906,9 @@ input[type=number]::-webkit-outer-spin-button {
 
   .choose_date input{
     font-size: 0.8rem
+  }
+
+  label{
+    margin-left: 5px;
   }
 }

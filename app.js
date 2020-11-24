@@ -64,13 +64,6 @@ function plus_minus() {
    measurementId: "G-9XMDWD517K"
  };
 
-var trendingInMenContainer = [4, 5, 7, 10, 12, 16, 22]
-
-var shavingContainer = [8, 9];
-
-var facialAndFaceCleanupContainer = [17, 18, 19, 20, 21]
-
-var offersContainer = [23, 24, 25]
 
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
@@ -78,217 +71,32 @@ var offersContainer = [23, 24, 25]
  db.collection("Men\'s Salon").orderBy("index").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
 
-        for (var i=0; i<trendingInMenContainer.length; i++){
+      var position = document.getElementById(doc.data().index);
 
-          if(doc.data().index === trendingInMenContainer[i]){
+      var title = position.querySelector(".title").innerText = doc.data().Service_title;
+      var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+      var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+      var imgSrc = position.querySelector(".card-img").src = doc.data().icon
 
-            var position = document.getElementById(trendingInMenContainer[i]);
-
-            var title = position.querySelector(".title").innerText = doc.data().Service_title;
-            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-            var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-          }
-        }
-
-
-
-      for (var i=0; i<shavingContainer.length; i++){
-        if(doc.data().index === shavingContainer[i]){
-          var position = document.getElementById(shavingContainer[i]);
-
-            var title = position.querySelector(".title").innerText = doc.data().Service_title;
-            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-            var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-        }
-      }
-
-      for (var i=0; i<facialAndFaceCleanupContainer.length; i++){
-        if(doc.data().index === facialAndFaceCleanupContainer[i]){
-          var position = document.getElementById(facialAndFaceCleanupContainer[i]);
-
-            var title = position.querySelector(".title").innerText = doc.data().Service_title;
-            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-            var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-        }
-      }
-
-      for (var i=0; i<offersContainer.length; i++){
-        if(doc.data().index === offersContainer[i]){
-          var position = document.getElementById(offersContainer[i]);
-
-            var title = position.querySelector(".title").innerText = doc.data().Service_title;
-            var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-            var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                        var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-        }
-      }
 
     });
 });
 
-var trendingInWomenList = [34, 35, 38, 39, 44, 43, 42, 47, 51, 56, 76, 79, 83, 87, 104, 108]
-
-var hairStylingList = [36, 37, 38, 45, 46, 47, 48, 49, 50, 40, 41]
-
-var threadingList = [51, 52, 53, 54, 55]
-
-var normalWaxingList = [56, 57, 58, 59, 60, 61, 62]
-
-var milkWaxingList = [63, 64, 65, 66, 67, 68]
-
-var ricaWaxingList = [69, 70, 71, 72, 73, 74]
-
-var manicurePedicureList = [75, 76, 77, 78, 79, 80]
-
-var arabicMehandiList = [81, 82, 83, 84, 85, 94, 98, 96]
-
-var roundMehandiList = [86, 87, 88, 89, 97, 95, 99]
-
-var bharvaMehandiList = [ 91, 92, 93, 100, 101, 102]
-
-var bleachFacialList = [103, 104, 105, 106, 107, 108, 109, 110, 111]
-
-var womenOffersList = [112, 113, 115, 116, 117, 118, 119]
 
 
 db.collection("Women\'s Salon").orderBy("index").get().then((querySnapshot) => {
    querySnapshot.forEach((doc) => {
+  
+    if(doc.data().index !== 114){
+      var position = document.getElementById(doc.data().index);
 
-       for (var i=0; i<trendingInWomenList.length; i++){
+      var title = position.querySelector(".title").innerText = doc.data().Service_title;
+      var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
+      var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
+      var imgSrc = position.querySelector(".card-img").src = doc.data().icon
+    }
 
-         if(doc.data().index === trendingInWomenList[i]){
-           var position = document.getElementById(trendingInWomenList[i]);
 
-           var title = position.querySelector(".title").innerText = doc.data().Service_title;
-           var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-           var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                      var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-         }
-       }
-
-     for (var i=0; i<hairStylingList.length; i++){
-       if(doc.data().index === hairStylingList[i]){
-         var position = document.getElementById(hairStylingList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<threadingList.length; i++){
-       if(doc.data().index === threadingList[i]){
-         var position = document.getElementById(threadingList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<normalWaxingList.length; i++){
-       if(doc.data().index === normalWaxingList[i]){
-         var position = document.getElementById(normalWaxingList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<milkWaxingList.length; i++){
-       if(doc.data().index === milkWaxingList[i]){
-         var position = document.getElementById(milkWaxingList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<ricaWaxingList.length; i++){
-       if(doc.data().index === ricaWaxingList[i]){
-         var position = document.getElementById(ricaWaxingList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<manicurePedicureList.length; i++){
-       if(doc.data().index === manicurePedicureList[i]){
-         var position = document.getElementById(manicurePedicureList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<arabicMehandiList.length; i++){
-       if(doc.data().index === arabicMehandiList[i]){
-         var position = document.getElementById(arabicMehandiList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<roundMehandiList.length; i++){
-       if(doc.data().index === roundMehandiList[i]){
-         var position = document.getElementById(roundMehandiList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<bharvaMehandiList.length; i++){
-       if(doc.data().index === bharvaMehandiList[i]){
-         var position = document.getElementById(bharvaMehandiList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<bleachFacialList.length; i++){
-       if(doc.data().index === bleachFacialList[i]){
-         var position = document.getElementById(bleachFacialList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
-
-     for (var i=0; i<womenOffersList.length; i++){
-       if(doc.data().index === womenOffersList[i]){
-         var position = document.getElementById(womenOffersList[i]);
-
-         var title = position.querySelector(".title").innerText = doc.data().Service_title;
-         var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
-         var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
-                  var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-       }
-     }
 
    });
 });
