@@ -80,28 +80,35 @@ var flag = 0;
 
   if(cartItemNumbers === 0){
     alert("Please select some items")
+    return false
   }
   else{
     if(name.length ===0){
       alert("Please enter the name")
+      return false
     }
     else{
       if(mobileNumber.length !== 10 ){
         alert("Please enter valid mobile number")
+        return false
       }
       else{
         if(address.length === 0){
           alert("Please enter valid address")
+          return false
         }
         else{
           if(date === undefined){
             alert("Please enter valid date")
+            return false
           }
           else{
             if(time === "" || hour<8 || hour > 18){
               alert("Please enter time between 8 a.m. to 7 p.m.")
+              return false
           }else if(selectedTime <= realTime && date === todayDate ){
               alert("please choose time 1 hour from current time")
+              return false
             }
             else{
               flag = 1;
