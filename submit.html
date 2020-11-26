@@ -58,36 +58,34 @@
           </div>
         </div>
         <div class="col-lg-6 choose_date">
-          <label for="Name" style="margin-top:5%;">
-          <pre>Name       : <input type="text" class="name" name="" value=""></pre>
 
-        </label>
-        <br>
+          <form   name="google-form" method="post"  >
 
-          <label for="Mobile Number">
-          <pre>Mobile No. : <input type="number" class="mobile" name="" value=""></pre>
-
-          </label>
-            <br>
-          <label for="Address">
-          <pre>Address    : </pre>
-
-            <textarea name="name" rows="3" cols="30" class="address"></textarea>
-          </label>
-          <br>
-          <label for="Date">
-          <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  ></pre>
-
-          </label>
-          <br>
-           <label for="Time" class="time">
-          <pre>Time       : <input type="time"  class="timepicker"></pre>
+            <label for="Name">
+              <pre>Name       : <input  type="text" class="name" name="Name" value=""></pre>
+            </label>
 
 
-           </label>
+
+            <pre>Mobile No. : <input type="number" class="mobile" name="Mobile Number" value=""></pre>
+
+            <pre>Address    :
+<textarea name="Address" rows="3" cols="30" class="address" ></textarea></pre>
 
 
-          <button type="button" name="button"  class="btn btn-success submitButton" style="width:100%; margin-bottom:5%">Submit</button>
+
+
+            <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  name="Date" ></pre>
+
+            <pre>Time       : <input type="time"  class="timepicker" name="Time">
+             <span style="font-size:0.4rem">*enter a time 1 hour from current time</span></pre>
+
+            <!-- <input type="submit" name="Submit" class="submitButton"  style="width:100%; margin-bottom:5%" value=""> -->
+
+            <button type="submit" name="button"  class="btn btn-success submitButton"  style="width:100%; margin-bottom:5%">Submit</button>
+
+          </form>
+
 
 
         </div>

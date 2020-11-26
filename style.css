@@ -835,11 +835,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .choose_date{
   /* text-align: center; */
+  margin-top: 10%;
 }
 
 .choose_date input{
   text-align: left;
 }
+
+
 
 .name,
 .mobile{
@@ -874,9 +877,8 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.2rem;
 }
 
-.time{
-  width: 80%;
-  margin-bottom: 8%;
+.submitButton{
+  margin-top: 10%;
 }
 
 
@@ -889,26 +891,26 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 0.8rem;
   }
 
+
+
   .datepicker,
   .name,
   .mobile{
-    width: 50%;
+    width: 40%;
   }
 
   .timepicker{
+    width: 40%;
 
-    width: 45%;
-  }
-
-  .time{
-    width: 80%;
   }
 
   .choose_date input{
     font-size: 0.8rem
   }
 
-  label{
+  .choose_date{
     margin-left: 5px;
+    margin-right: 0;
   }
+
 }

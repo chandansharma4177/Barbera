@@ -70,7 +70,7 @@ function plus_minus() {
  var db = firebase.firestore();
  db.collection("Men\'s Salon").orderBy("index").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-
+      
       var position = document.getElementById(doc.data().index);
 
       var title = position.querySelector(".title").innerText = doc.data().Service_title;
@@ -86,7 +86,7 @@ function plus_minus() {
 
 db.collection("Women\'s Salon").orderBy("index").get().then((querySnapshot) => {
    querySnapshot.forEach((doc) => {
-  
+
     if(doc.data().index !== 114){
       var position = document.getElementById(doc.data().index);
 

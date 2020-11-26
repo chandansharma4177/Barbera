@@ -1,3 +1,6 @@
+
+
+
 function dsisplayFinalCart(){
   var finalTable = document.getElementsByClassName("final_product_table")[0];
 
@@ -35,6 +38,7 @@ dsisplayFinalCart()
 var date = new Date();
 var d;
 var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+console.log();
 
 $('.datepicker').datepicker({
   onSelect: function (selectedDate) {
@@ -45,8 +49,10 @@ $('.datepicker').datepicker({
 });
 
 
+var realTime =(date.getHours() + 1)*100 + date.getMinutes()
 
-
+var month = parseInt(date.getMonth()) +1
+var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
 
 
 $('.submitButton')[0].addEventListener('click', function(){
@@ -55,13 +61,22 @@ $('.submitButton')[0].addEventListener('click', function(){
   var cartItems = localStorage.getItem("itemList");
   cartItems = JSON.parse(cartItems);
 
-
-
   var name = $('.name')[0].value;
   var mobileNumber = $('.mobile')[0].value;
   var address = $('.address')[0].value;
   var date = d;
   var time = $('.timepicker')[0].value;
+
+  var hour = time[0] + time[1];
+  var minute = time[3]+time[4];
+  hour = parseInt(hour);
+  minute = parseInt(minute)
+
+  var selectedTime = hour*100 + minute
+
+
+
+var flag = 0;
 
   if(cartItemNumbers === 0){
     alert("Please select some items")
@@ -83,8 +98,13 @@ $('.submitButton')[0].addEventListener('click', function(){
             alert("Please enter valid date")
           }
           else{
-            if(time === ""){
-              alert("Please enter valid time")
+            if(time === "" || hour<8 || hour > 18){
+              alert("Please enter time between 8 a.m. to 7 p.m.")
+          }else if(selectedTime <= realTime && date === todayDate ){
+              alert("please choose time 1 hour from current time")
+            }
+            else{
+              flag = 1;
             }
           }
         }
@@ -92,12 +112,7 @@ $('.submitButton')[0].addEventListener('click', function(){
     }
   }
 
-
-
-
-
-
-  if(name.length !==0 && mobileNumber.length === 10  && address.length !==0 && time !==""){
+  if(flag === 1){
 
     var totalPayableMoney = 0;
     Object.values(cartItems).map(item => {
@@ -114,12 +129,18 @@ $('.submitButton')[0].addEventListener('click', function(){
 
     })
 
-    
-    console.log(name);
-    console.log(mobileNumber);
-    console.log(address);
-    console.log(date);
-    console.log(time);
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzY5svW2d0K5KNEiyrzPeUZQS2TcMsrJyk3-KkdovMRUFoQTO0e/exec"
+
+    const form = document.forms['google-form']
+
+      form.addEventListener('submit', e => {
+
+        fetch(scriptURL, { method: 'POST',mode: "no-cors", body: new FormData(form)})
+        alert("Booked successfully")
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
 
     if(cartItems != null){
       cartItems = {}
@@ -127,13 +148,9 @@ $('.submitButton')[0].addEventListener('click', function(){
       localStorage.setItem('itemList', JSON.stringify(cartItems));
     }
 
-
-
     cartItemNumbers = 0;
 
     localStorage.setItem('cartItemNumbers', JSON.stringify(cartItemNumbers));
 
   }
-
-
 })
