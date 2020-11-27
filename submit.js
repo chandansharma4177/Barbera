@@ -116,6 +116,8 @@ $('.submitButton')[0].addEventListener('click', function(){
   }
 
     if(flag === 1){
+      var finalItemList = []
+
     var totalPayableMoney = 0;
     Object.values(cartItems).map(item => {
       var quantityNumber = parseFloat(item.quantity_value);
@@ -124,15 +126,26 @@ $('.submitButton')[0].addEventListener('click', function(){
       var totalPriceOfItem =priceNumber*quantityNumber ;
       totalPayableMoney += totalPriceOfItem;
 
-      console.log(item.title_name);
-      console.log(item.price_value);
-      console.log(item.quantity_value);
-      console.log(totalPriceOfItem);
+      var itemString = item.title_name + "        " + item.price_value + "   x    " + item.quantity_value
+
+      finalItemList.push(itemString)
 
     })
 
-
-      SubForm()
+    fetch("https://api.apispreadsheets.com/data/4133/", {
+    	method: "POST",
+    	body: JSON.stringify({"data": {"Mobile Number":mobileNumber,"Name":name,"Address":address,"Date":date,"Time":time, "Item": finalItemList, "Total Amount": totalPayableMoney}}),
+    }).then(res =>{
+    	if (res.status === 201){
+    		alert("Booking successful")
+        location.reload();
+    	}
+    	else{
+    		// ERROR
+        alert("Error")
+    	}
+    })
+      // SubForm()
 
     if(cartItems != null){
       cartItems = {}
@@ -148,17 +161,17 @@ $('.submitButton')[0].addEventListener('click', function(){
 })
 
 
-function SubForm(){
-			$.ajax({
-				url:"https://api.apispreadsheets.com/data/4114/",
-				type:"post",
-				data:$("#myForm").serializeArray(),
-				success: function(){
-					alert("Booking Successful")
-          location.reload();
-				},
-				error: function(){
-					alert("There was an error :(")
-				}
-			});
-		}
+// function SubForm(){
+// 			$.ajax({
+// 				url:"https://api.apispreadsheets.com/data/4133/",
+// 				type:"post",
+// 				data:$("#myForm").serializeArray(),
+// 				success: function(){
+// 					alert("Booking Successful")
+//           location.reload();
+// 				},
+// 				error: function(){
+// 					alert("There was an error :(")
+// 				}
+// 			});
+// 		}
