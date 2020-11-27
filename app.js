@@ -4,11 +4,7 @@
 
 // setTimeout(function(){window.location="book.html";}, 3000)
 
-if (document.referrer !== document.location.href) {
-    setTimeout(function() {
-        document.location.reload()
-  }, 5000);
-}
+
 
 function plus_minus() {
   for (var i =0; i<$('.minus').length; i++){
