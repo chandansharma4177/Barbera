@@ -59,34 +59,27 @@
         </div>
         <div class="col-lg-6 choose_date">
 
-          <form   name="google-form" method="post" onsubmit="return finalSubmit()" >
-
-            <label for="Name">
-              <pre>Name       : <input  type="text" class="name" name="Name" value="" required></pre>
-            </label>
+          <form    method="post" id="myForm" >
 
 
+            <pre>Name       : <input  type="text" class="name" name="Name" value="" required=""></pre>
 
-            <pre>Mobile No. : <input type="text" class="mobile" name="Mobile Number" value="" required minlength="10" maxlength="10"></pre>
+
+            <pre>Mobile No. : <input type="text" class="mobile" name="Mobile Number" value="" required="" minlength="10" maxlength="10"></pre>
 
             <pre>Address    :
-<textarea name="Address" rows="3" cols="30" class="address" required></textarea> </pre>
+<textarea name="Address" rows="3" cols="30" class="address" required=""></textarea> </pre>
 
+            <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  name="Date" required="">  </pre>
 
-
-
-            <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  name="Date" required>  </pre>
-
-            <pre>Time       : <input type="time"  class="timepicker" name="Time" required> </span>
+            <pre>Time       : <input type="time"  class="timepicker" name="Time" required=""> </span>
              <span style="font-size:0.4rem">*enter a time 1 hour from current time</span></pre>
 
-            <!-- <input type="submit" name="Submit" class="submitButton"  style="width:100%; margin-bottom:5%" value=""> -->
-
-            <button type="submit" name="button"  class="btn btn-success submitButton"  style="width:100%; margin-bottom:5%">Submit</button>
+            <!-- <input type="submit" name="Submit" class="submitButton" onclick="errorChecker()" style="width:100%; margin-bottom:5%" value="Submit"> -->
 
           </form>
 
-
+        <button  name="button"  class="btn btn-success submitButton"  style="width:100%; margin-bottom:5%">Submit</button>
 
         </div>
 
@@ -94,6 +87,10 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">

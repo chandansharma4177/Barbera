@@ -55,7 +55,7 @@ var month = parseInt(date.getMonth()) +1
 var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
 
 
-function finalSubmit(){
+$('.submitButton')[0].addEventListener('click', function(){
   var cartItemNumbers = localStorage.getItem("cartItemNumbers");
   cartItemNumbers = JSON.parse(cartItemNumbers)
   var cartItems = localStorage.getItem("itemList");
@@ -73,30 +73,49 @@ function finalSubmit(){
   minute = parseInt(minute)
 
   var selectedTime = hour*100 + minute
-
-
-
-var flag = 0;
-
+  var flag = 0
   if(cartItemNumbers === 0){
     alert("Please select some items")
     return false
   }
-
-
-  if(time === "" || hour<8 || hour > 18){
-    alert("Enter time between 8 a.m. to 7 p.m.")
-    return false
-}else if(selectedTime <= realTime && date === todayDate ){
-  alert("please choose time 1 hour from current time")
-    return false
-  }
   else{
-    flag = 1
+    if(name.length ===0){
+      alert("Please enter the name")
+      return false
+    }
+    else{
+      if(mobileNumber.length !== 10 ){
+        alert("Please enter valid mobile number")
+        return false
+      }
+      else{
+        if(address.length === 0){
+          alert("Please enter valid address")
+          return false
+        }
+        else{
+          if(date === undefined){
+            alert("Please enter valid date")
+            return false
+          }
+          else{
+            if(time === "" || hour<8 || hour > 18){
+              alert("Please enter time between 8 a.m. to 7 p.m.")
+              return false
+          }else if(selectedTime <= realTime && date === todayDate ){
+              alert("please choose time 1 hour from current time")
+              return false
+            }
+            else{
+              flag = 1;
+            }
+          }
+        }
+      }
+    }
   }
 
-  if(flag === 1){
-
+    if(flag === 1){
     var totalPayableMoney = 0;
     Object.values(cartItems).map(item => {
       var quantityNumber = parseFloat(item.quantity_value);
@@ -113,17 +132,7 @@ var flag = 0;
     })
 
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzY5svW2d0K5KNEiyrzPeUZQS2TcMsrJyk3-KkdovMRUFoQTO0e/exec"
-
-    const form = document.forms['google-form']
-
-      form.addEventListener('submit', e => {
-
-        fetch(scriptURL, { method: 'POST',mode: "no-cors", body: new FormData(form)})
-        alert("Booked successfully")
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
-      })
+      SubForm()
 
     if(cartItems != null){
       cartItems = {}
@@ -134,6 +143,22 @@ var flag = 0;
     cartItemNumbers = 0;
 
     localStorage.setItem('cartItemNumbers', JSON.stringify(cartItemNumbers));
-
-  }
 }
+
+})
+
+
+function SubForm(){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/4114/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Booking Successful")
+          location.reload();
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
