@@ -132,13 +132,16 @@ $('.submitButton')[0].addEventListener('click', function(){
 
     })
 
+    console.log(finalItemList);
+
     fetch("https://api.apispreadsheets.com/data/4133/", {
     	method: "POST",
-    	body: JSON.stringify({"data": {"Mobile Number":mobileNumber,"Name":name,"Address":address,"Date":date,"Time":time, "Item": finalItemList, "Total Amount": totalPayableMoney}}),
+    	body: JSON.stringify({"data": {"Mobile Number":mobileNumber,"Name":name,"Address":address,"Date":date,"Time":time, "Items":finalItemList, "Total Amount": totalPayableMoney}}),
     }).then(res =>{
     	if (res.status === 201){
     		alert("Booking successful")
-        location.reload();
+        location.href = 'index.html'
+        
     	}
     	else{
     		// ERROR

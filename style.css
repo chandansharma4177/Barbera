@@ -826,7 +826,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .final_quantity_value{
-
+  text-align: center;
 }
 
 .final_item_total_price{

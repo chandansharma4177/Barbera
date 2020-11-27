@@ -1,3 +1,15 @@
+// $(".book_now")[0].addEventListener('click', function(){
+//   setTimeout(function(){window.location="book.html";}, 3000)
+// })
+
+// setTimeout(function(){window.location="book.html";}, 3000)
+
+if (document.referrer !== document.location.href) {
+    setTimeout(function() {
+        document.location.reload()
+  }, 5000);
+}
+
 function plus_minus() {
   for (var i =0; i<$('.minus').length; i++){
     $('.minus')[i].addEventListener("click"  , function () {
@@ -70,7 +82,7 @@ function plus_minus() {
  var db = firebase.firestore();
  db.collection("Men\'s Salon").orderBy("index").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      
+
       var position = document.getElementById(doc.data().index);
 
       var title = position.querySelector(".title").innerText = doc.data().Service_title;
