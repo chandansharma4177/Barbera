@@ -36,18 +36,42 @@
   <section id="navigationBar">
     <nav class="navbar navbar-expand-lg navbar-light  book_nav " >
       <a class="navbar-brand barbera_logo_book" href="index.html"><strong>Home </strong> </a>
+      <div class="ml-auto">
+        <button type="button" class="btn navbar-brand   myBookings"  data-toggle="modal"  data-target="#phoneNumberWindow"><strong>My Bookings</strong></button>
+        <button type="button" class="btn   cart" data-toggle="modal" data-target="#exampleModalCenter">
+          <i class="fas fa-shopping-cart"> <span>0</span></i>
+        </button>
+      </div>
 
-      <button type="button" class="btn  ml-auto cart" data-toggle="modal" data-target="#exampleModalCenter">
-        <i class="fas fa-shopping-cart"> <span>0</span></i>
-      </button>
 
     </nav>
   </section>
 
 
+<!-- -Modal Mobile No.- -->
+  <div class="modal fade" id="phoneNumberWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Phone Number Verification</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body MobileNumberVerification">
+          <input type="number" class="MobileNumberVerificationInput" name=""  placeholder="Enter 10 digit Phone no. ">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary LogIn"><a href="myBookings.html" style="color:#fff; text-decoration:none">Log In</a> </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-  <!-- Modal -->
+
+  <!-- Modal Items-->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -88,7 +112,7 @@
     <div id="men">
       <div id="overlay_men" >
         <img src="images/beard_man.png" class="man_logo"  alt="beard logo">
-        <button type="button" name="button" class="btn btn-dark" onclick="off_men()"><span>Men's Section</span></button>
+        <button type="button" name="button" class="btn btn-dark" onclick="off_men()"><span>Go to Men's Section</span></button>
       </div>
 
       <div class="container men_content">
@@ -115,7 +139,7 @@
           <div id="trendingInMen" class="owl-carousel owl-theme">
             <div id="4">
               <div class="card mb-2 ">
-                <img class="card-img" src="" alt="images/hair_cut_1.png">
+                <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
                 <div class="card-body">
                   <h4 class="title"></h4>
                   <span><del> </del></span>
@@ -128,7 +152,7 @@
 
             <div id="5">
               <div class="card mb-2 ">
-                <img class="card-img" src="" alt="images/hair_cut_1.png">
+                <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
                 <div class="card-body">
                   <h4 class="title"></h4>
                   <span><del> </del></span>
@@ -141,7 +165,7 @@
 
             <div id="6">
               <div class="card mb-2 ">
-                <img class="card-img" src="" alt="images/hair_cut_1.png">
+                <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
                 <div class="card-body">
                   <h4 class="title"></h4>
                   <span><del> </del></span>
@@ -154,7 +178,7 @@
 
             <div id="7">
               <div class="card mb-2 ">
-                <img class="card-img" src="" alt="images/hair_cut_1.png">
+                <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
                 <div class="card-body">
                   <h4 class="title"></h4>
                   <span><del> </del></span>
@@ -173,7 +197,7 @@
         <div id="SpecialOffers" class="owl-carousel owl-theme">
           <div id="23">
             <div class="card mb-2 ">
-              <img class="card-img" src="" alt="images/hair_cut_1.png">
+              <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
               <div class="card-body">
                 <h4 class="title"></h4>
                 <span><del> </del></span>
@@ -186,7 +210,7 @@
 
           <div id="24">
             <div class="card mb-2 ">
-              <img class="card-img" src="" alt="images/hair_cut_1.png">
+              <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
               <div class="card-body">
                 <h4 class="title"></h4>
                 <span><del> </del></span>
@@ -199,7 +223,7 @@
 
           <div id="25">
             <div class="card mb-2 ">
-              <img class="card-img" src="" alt="images/hair_cut_1.png">
+              <img class="card-img" src="images/Barbera.jpeg" alt="images/hair_cut_1.png">
               <div class="card-body">
                 <h4 class="title"></h4>
                 <span><del> </del></span>
@@ -392,7 +416,7 @@
     <div id="women">
       <div id="overlay_women" >
         <img src="images/women_logo.png" class="woman_logo" alt="">
-        <button type="button" name="button" class="btn btn-dark " onclick="off_women()"><span>Women's Section</span></button>
+        <button type="button" name="button" class="btn btn-dark " onclick="off_women()"><span>Go to Women's Section</span></button>
       </div>
 
       <div class="container men_content">
@@ -1646,6 +1670,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="app.js" charset="utf-8"></script>
   <script src="submit.js" charset="utf-8"></script>
+
 </body>
 
 </html>
