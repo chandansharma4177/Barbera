@@ -1,6 +1,4 @@
-
-
-
+if($('.submitButton')[0]){
 function dsisplayFinalCart(){
   var finalTable = document.getElementsByClassName("final_product_table")[0];
 
@@ -15,18 +13,13 @@ function dsisplayFinalCart(){
     totalPayableMoney += totalPriceOfItem;
     finalTable.innerHTML +=`
     <tr>
-
       <td class="table_content" style="width:55%;"> <h5 class="final_product_heading">${item.title_name}</h5>
       <h5 class="final_product_price">${item.price_value}</h5>
-
      </td>
-
      <td class="final_quantity_value" style="width:25%;"> ${item.quantity_value} </td>
      <td class="final_item_total_price" style="width:20%;">Rs ${totalPriceOfItem} </td>
-
     </tr>
     `
-
   });
   $(".final-price span")[0].innerText = "Rs " + totalPayableMoney
 }
@@ -38,7 +31,7 @@ dsisplayFinalCart()
 var date = new Date();
 var d;
 var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-console.log();
+
 
 $('.datepicker').datepicker({
   onSelect: function (selectedDate) {
@@ -49,10 +42,14 @@ $('.datepicker').datepicker({
 });
 
 
+
+
 var realTime =(date.getHours() + 1)*100 + date.getMinutes()
 
 var month = parseInt(date.getMonth()) +1
 var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
+
+console.log(todayDate);
 
 
 $('.submitButton')[0].addEventListener('click', function(){
@@ -116,7 +113,7 @@ $('.submitButton')[0].addEventListener('click', function(){
   }
 
     if(flag === 1){
-      var finalItemList = []
+      var finalItemList = ""
 
     var totalPayableMoney = 0;
     Object.values(cartItems).map(item => {
@@ -126,29 +123,31 @@ $('.submitButton')[0].addEventListener('click', function(){
       var totalPriceOfItem =priceNumber*quantityNumber ;
       totalPayableMoney += totalPriceOfItem;
 
-      var itemString = item.title_name + "        " + item.price_value + "   x    " + item.quantity_value
+      var itemString = item.title_name + "        " + item.price_value + "   x    " + item.quantity_value +"\n"
+      finalItemList+=itemString
 
-      finalItemList.push(itemString)
 
     })
 
-    console.log(finalItemList);
 
-    fetch("https://api.apispreadsheets.com/data/4133/", {
+    var changedDate ="date = " + date[0]+date[1]+"/"  + date[3]+date[4]+"/" + date[6]+date[7]+date[8]+date[9]
+
+    var changedTime = "time = " + time;
+
+    var identity = mobileNumber+date+time
+
+    fetch("https://api.apispreadsheets.com/data/4353/", {
     	method: "POST",
-    	body: JSON.stringify({"data": {"Mobile Number":mobileNumber,"Name":name,"Address":address,"Date":date,"Time":time, "Items":finalItemList, "Total Amount": totalPayableMoney}}),
+    	body: JSON.stringify({"data": {"ID":identity , "Mobile_Number":mobileNumber,"Name":name,"Address":address,"Date":changedDate,"Time":changedTime, "Items":finalItemList, "Total Amount": totalPayableMoney}}),
     }).then(res =>{
     	if (res.status === 201){
     		alert("Booking successful")
         location.href = 'index.html'
-        
     	}
     	else{
-    		// ERROR
         alert("Error")
     	}
     })
-      // SubForm()
 
     if(cartItems != null){
       cartItems = {}
@@ -162,19 +161,162 @@ $('.submitButton')[0].addEventListener('click', function(){
 }
 
 })
+}
 
 
-// function SubForm(){
-// 			$.ajax({
-// 				url:"https://api.apispreadsheets.com/data/4133/",
-// 				type:"post",
-// 				data:$("#myForm").serializeArray(),
-// 				success: function(){
-// 					alert("Booking Successful")
-//           location.reload();
-// 				},
-// 				error: function(){
-// 					alert("There was an error :(")
-// 				}
-// 			});
-// 		}
+
+
+
+
+// -------------------------------------------myBookings.js------------------------------------------
+var enteredMobileNo
+
+if($(".LogIn")[0]){
+
+
+  $(".LogIn")[0].addEventListener('click' , function(){
+    var number = $(".MobileNumberVerificationInput")[0].value;
+    localStorage.setItem('MobileNumberVerification', JSON.stringify(number));
+  })
+}
+
+enteredMobileNo = localStorage.getItem("MobileNumberVerification")
+enteredMobileNo = JSON.parse(enteredMobileNo)
+enteredMobileNo = parseInt(enteredMobileNo)
+
+if($(".BookedItems")[0]){
+
+  var myVar;
+
+  function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+  }
+
+  function showPage() {
+  document.getElementById("loader").style.display = "none";
+}
+
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+
+const url = 'https://script.google.com/macros/s/AKfycbxEg24SJ1erQD7yx4NiRPicSVcSu1F64j0_tibYpA/exec';
+
+var bookTable = $(".BookedItems")[0];
+
+fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
+	if (res.status === 200){
+		// SUCCESS
+		res.json().then(data=>{
+
+
+
+      data.data.forEach(function(val){
+
+        if(val.Mobile_Number == enteredMobileNo){
+
+          var dateEntered = val.Date[7]+ val.Date[8] + val.Date[9] +val.Date[10] +val.Date[11] +val.Date[12] +val.Date[13] +val.Date[14] +val.Date[15] +val.Date[16]
+
+          var time = val.Time[7]+val.Time[8]+val.Time[9]+val.Time[10]+val.Time[11]
+
+          var compareTime = val.Time[7]+val.Time[8]+val.Time[10]+val.Time[11]
+
+          var date = new Date();
+
+          var realTime =(date.getHours() + 1)*100 + date.getMinutes()
+
+          var month = parseInt(date.getMonth()) +1
+          var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
+
+          bookTable.innerHTML += `
+          <tr>
+            <td class="bookedDate">${dateEntered}</td>
+            <td class="bookedTime">${time}</td>
+            <td>${val.Items}
+
+          `
+
+          if(dateEntered != todayDate ){
+            bookTable.innerHTML += `
+
+              <br>
+              <br>
+              <button type="button" class="btn btn-danger cancelBooking" name="button">Cancel</button>
+            </td>
+          </tr>`
+          }
+          else if(dateEntered == todayDate && compareTime >realTime){
+            bookTable.innerHTML += `
+
+              <br>
+              <br>
+              <button type="button" class="btn btn-danger cancelBooking" name="button">Cancel</button>
+            </td>
+          </tr>`
+          }
+          else{
+            bookTable.innerHTML += `
+
+              <br>
+              <br>
+              <button type="button" class="btn btn-success cancelBooking" name="button">Completed</button>
+            </td>
+          </tr>`
+          }
+        }
+
+      })
+
+      var cancelBookigClicked =document.getElementsByClassName('cancelBooking')
+
+
+      for(var i=0; i<cancelBookigClicked.length; i++){
+
+        cancelBookigClicked[i].addEventListener('click', update_value)
+      }
+
+		}).catch(err => console.log(err))
+	}
+	else{
+		// ERROR
+	}
+})
+
+
+
+function update_value(event){
+
+	var input = event.target
+  // console.log(input.parentElement);
+  var selectedDateValue = input.parentElement.parentElement.getElementsByClassName('bookedDate')[0].innerText
+  var selectedTimeValue = input.parentElement.parentElement.getElementsByClassName('bookedTime')[0].innerText
+var id1=	enteredMobileNo + selectedDateValue + selectedTimeValue
+	var item= input.parentElement.innerText
+  var update_url = proxyUrl + url+"?callback=ctrlq&Items="+item+"&ID="+id1+"&action=update";
+
+  fetch("https://api.apispreadsheets.com/data/4383/", {
+  	method: "POST",
+  	body: JSON.stringify({"data": {"ID":id1,"Items":item}}),
+  }).then(res =>{
+  	if (res.status === 201){
+  		// SUCCESS
+  	}
+  	else{
+  		// ERROR
+  	}
+  })
+
+
+fetch("https://api.apispreadsheets.com/data/4366/?query=deletefrom4366whereID="+ "'" +id1 + "'").then(res=>{
+	if (res.status === 200){
+		// SUCCESS
+      alert("booking Cancelled")
+      location.reload();
+	}
+	else{
+		// ERROR
+	}
+})
+
+
+  }
+
+}
