@@ -399,7 +399,7 @@ function render() {
 render()
 
 function phoneAuth(){
-  var number = document.getElementsByClassName('MobileNumberVerificationInput')[0].value;
+  var number ="+91 " + document.getElementsByClassName('MobileNumberVerificationInput')[0].value;
   var appVerifier = window.recaptchaVerifier;
   firebase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
     window.confrimationResult = confrimationResult;
