@@ -385,3 +385,41 @@ function totalPrice(){
 
 displayCart()
 onLoadCartNumber()
+
+
+
+
+
+window.onload=function() {
+  render();
+}
+
+function render() {
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+  recaptchaVerifier.render();
+}
+
+function phoneAuth(){
+  var number = document.getElementsByClassName('MobileNumberVerificationInput')[0].value;
+  var appVerifier = window.recaptchaVerifier;
+  fierbase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
+    window.confrimationResult = confrimationResult;
+    coderesult = confrimationResult;
+    console.log(coderesult);
+    alert("Message sent")
+  }).catch(function(error){
+    alert(error.message)
+  })
+
+}
+
+function codeverify(){
+  var code = document.getElementById('VerificationCode').value;
+  coderesult.confirm(code).then(function(result){
+    alert("successfully register")
+    var user = result.user;
+    console.log(user);
+  }).catch(function(error){
+    alert(error.message)
+  })
+}

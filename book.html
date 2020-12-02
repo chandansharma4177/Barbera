@@ -60,6 +60,12 @@
         </div>
         <div class="modal-body MobileNumberVerification">
           <input type="number" class="MobileNumberVerificationInput" name=""  placeholder="Enter 10 digit Phone no. ">
+          <div id="recaptcha-container"></div>
+          <button type="button" onclick="phoneAuth()">Send</button>
+          <br>
+          <input type="text" id="VerificationCode" placeholder="enter Verification code" name="" value="">
+          <button type="button" onclick="codeverify()" name="button">Verify</button>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
