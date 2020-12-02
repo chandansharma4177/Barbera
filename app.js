@@ -389,20 +389,19 @@ onLoadCartNumber()
 
 
 
-
-window.onload=function() {
-  render();
-}
+firebase.auth().languageCode = 'it';
 
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
   recaptchaVerifier.render();
 }
 
+render()
+
 function phoneAuth(){
   var number = document.getElementsByClassName('MobileNumberVerificationInput')[0].value;
   var appVerifier = window.recaptchaVerifier;
-  fierbase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
+  firebase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
     window.confrimationResult = confrimationResult;
     coderesult = confrimationResult;
     console.log(coderesult);
