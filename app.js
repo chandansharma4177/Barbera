@@ -407,6 +407,7 @@ function phoneAuth(){
     window.confrimationResult = confrimationResult;
     coderesult = confrimationResult;
     $(".message span")[0].innerText = number
+    document.getElementById("mobileEnterSection").style.visibility = "hidden"
     document.getElementById("mobileVerificationSection").style.visibility = "visible"
 
   }).catch(function(error){
