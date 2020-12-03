@@ -27,6 +27,16 @@
 
       <!-- Default Theme -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+
   </head>
   <body onload="myFunction()">
 
@@ -35,21 +45,14 @@
 
     </nav>
 
-    <div class="modal fade" id="cancelModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="cancelModel" style="margin: 5px" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+        <div class="modal-content" style="background-color:#000">
+
           <div class="modal-body">
-            <h2>Booking Cancelled</h2>
+            <h4 style="color:#fff">Booking Cancelled</h4>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
-          </div>
+
         </div>
       </div>
     </div>
@@ -77,12 +80,6 @@
 
 
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

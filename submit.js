@@ -145,7 +145,7 @@ $('.submitButton')[0].addEventListener('click', function(){
     	body: JSON.stringify({"data": {"ID":identity , "Mobile_Number":mobileNumber,"Name":name,"Address":address,"Date":changedDate,"Time":changedTime, "Items":finalItemList, "Total Amount": totalPayableMoney}}),
     }).then(res =>{
     	if (res.status === 201){
-    		alert("Booking successful")
+    		
         location.href = 'index.html'
     	}
     	else{
@@ -314,7 +314,7 @@ var id1=	enteredMobileNo + selectedDateValue + selectedTimeValue
 fetch("https://api.apispreadsheets.com/data/4366/?query=deletefrom4366whereID="+ "'" +id1 + "'").then(res=>{
 	if (res.status === 200){
 		// SUCCESS
-      
+
       location.reload();
 	}
 	else{

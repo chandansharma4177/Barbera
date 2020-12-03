@@ -33,9 +33,25 @@
       <a class="navbar-brand barbera_logo_book" href="book.html"><strong>Back </strong> </a>
 
     </nav>
+
+
+    <div class="modal fade" id="submitModel" style="margin-right:5px" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content" style="background-color:#000">
+          <div class="modal-body" >
+            <h4 style="color:#fff">Congratulations!!!</h4>
+            <h6 style="color:#fff">Successfully Booked</h6>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
     </section>
 
-      <div class="row">
+      <div class="row" style="margin:0">
         <div class="col-lg-6">
           <table class="final_product_table" style="width:100%">
             <tr>
@@ -73,13 +89,14 @@
             <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  name="Date" required="">  </pre>
 
             <pre>Time       : <input type="time"  class="timepicker" name="Time" required=""> </span>
+             <span style="font-size:0.4rem">*enter a time between 8 a.m. to 7 p.m.</span>
              <span style="font-size:0.4rem">*enter a time 1 hour from current time</span></pre>
 
             <!-- <input type="submit" name="Submit" class="submitButton" onclick="errorChecker()" style="width:100%; margin-bottom:5%" value="Submit"> -->
 
           </form>
 
-        <button  name="button"  class="btn btn-success submitButton"  style="width:100%; margin-bottom:5%">Submit</button>
+        <button  name="button"  class="btn btn-success submitButton" data-toggle="modal"  data-target="#submitModel"  style="width:100%; margin-bottom:5%">Submit</button>
 
         </div>
 
