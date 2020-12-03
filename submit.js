@@ -1,3 +1,7 @@
+
+
+
+
 if($('.submitButton')[0]){
 function dsisplayFinalCart(){
   var finalTable = document.getElementsByClassName("final_product_table")[0];
@@ -173,6 +177,8 @@ var enteredMobileNo
 
 if($(".LogIn")[0]){
 
+  // firebase.auth().languageCode = 'it';
+  
 
   $(".LogIn")[0].addEventListener('click' , function(){
     var number = $(".MobileNumberVerificationInput")[0].value;
@@ -257,7 +263,7 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
 
               <br>
               <br>
-              <button type="button" class="btn btn-success cancelBooking" name="button">Completed</button>
+              <button type="button" class="btn btn-success " name="button">Completed</button>
             </td>
           </tr>`
           }

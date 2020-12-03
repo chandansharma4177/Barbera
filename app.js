@@ -122,6 +122,7 @@ function off_men() {
   document.getElementById("overlay_women").style.width = "20%";
   document.getElementById("overlay_women").style.left = "80%";
   document.getElementById("overlay_women").style.padding = "20% 0";
+  document.getElementById("womenSectionButton").style.visibility = "visible";
   // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
   $('#men .owl-carousel').owlCarousel({
     loop:true,
@@ -156,6 +157,7 @@ function off_women() {
   document.getElementById("overlay_men").style.width = "20%";
   document.getElementById("overlay_men").style.right = "80%";
   document.getElementById("overlay_men").style.padding = "20% 0";
+  document.getElementById("menSectionButton").style.visibility = "visible";
 
   $('#women .owl-carousel').owlCarousel({
     loop:true,
@@ -404,8 +406,9 @@ function phoneAuth(){
   firebase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
     window.confrimationResult = confrimationResult;
     coderesult = confrimationResult;
-    console.log(coderesult);
-    alert("Message sent")
+    $(".message span")[0].innerText = number 
+    document.getElementById("mobileVerificationSection").style.visibility = "visible"
+
   }).catch(function(error){
     alert(error.message)
   })
