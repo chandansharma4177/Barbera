@@ -406,7 +406,7 @@ function phoneAuth(){
   firebase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
     window.confrimationResult = confrimationResult;
     coderesult = confrimationResult;
-    $(".message span")[0].innerText = number 
+    $(".message span")[0].innerText = number
     document.getElementById("mobileVerificationSection").style.visibility = "visible"
 
   }).catch(function(error){
@@ -418,7 +418,7 @@ function phoneAuth(){
 function codeverify(){
   var code = document.getElementById('VerificationCode').value;
   coderesult.confirm(code).then(function(result){
-    alert("successfully register")
+    alert("verified")
     var user = result.user;
     console.log(user);
   }).catch(function(error){
