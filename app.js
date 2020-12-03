@@ -406,7 +406,7 @@ function phoneAuth(){
   firebase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
     window.confrimationResult = confrimationResult;
     coderesult = confrimationResult;
-    $(".message span")[0].innerText = number 
+    $(".message")[0].innerText = number 
     document.getElementById("mobileVerificationSection").style.visibility = "visible"
 
   }).catch(function(error){
