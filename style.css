@@ -313,11 +313,15 @@ h1, h2, h3, h4, h5, h6, p {
 .why_barbera_background_blue {
   background-color: #603F83FF;
   padding-bottom: 30%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .why_barbera_background_white {
   background-color: #C7D3D4FF;
   padding-bottom: 35%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .card-text {
@@ -333,6 +337,11 @@ h1, h2, h3, h4, h5, h6, p {
   .card {
     margin-right: 5%;
     width: auto;
+  }
+
+  .why_barbera_card_body{
+    padding-top: 0;
+    margin-bottom: 10px;
   }
 }
 

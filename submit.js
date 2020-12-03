@@ -178,7 +178,7 @@ var enteredMobileNo
 if($(".LogIn")[0]){
 
   // firebase.auth().languageCode = 'it';
-  
+
 
   $(".LogIn")[0].addEventListener('click' , function(){
     var number = $(".MobileNumberVerificationInput")[0].value;
@@ -245,7 +245,7 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
 
               <br>
               <br>
-              <button type="button" class="btn btn-danger cancelBooking" name="button">Cancel</button>
+              <button type="button" class="btn btn-danger cancelBooking" data-toggle="modal"  data-target="#cancelModel" name="button">Cancel</button>
             </td>
           </tr>`
           }
@@ -254,7 +254,7 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
 
               <br>
               <br>
-              <button type="button" class="btn btn-danger cancelBooking" name="button">Cancel</button>
+              <button type="button" class="btn btn-danger cancelBooking" data-toggle="modal"  data-target="#cancelModel" name="button">Cancel</button>
             </td>
           </tr>`
           }
@@ -314,7 +314,7 @@ var id1=	enteredMobileNo + selectedDateValue + selectedTimeValue
 fetch("https://api.apispreadsheets.com/data/4366/?query=deletefrom4366whereID="+ "'" +id1 + "'").then(res=>{
 	if (res.status === 200){
 		// SUCCESS
-      alert("booking Cancelled")
+      
       location.reload();
 	}
 	else{

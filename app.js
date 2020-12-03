@@ -428,7 +428,7 @@ function codeverify(){
   var code = document.getElementById('VerificationCode').value;
   console.log(code);
   coderesult.confirm(code).then(function(result){
-    alert("verified")
+    
     window.location = "myBookings.html"
     var user = result.user;
 
