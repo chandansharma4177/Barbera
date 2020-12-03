@@ -383,22 +383,22 @@ function totalPrice(){
 }
 
 
-
-
 displayCart()
 onLoadCartNumber()
 
 
-
-
 firebase.auth().languageCode = 'it';
+
+window.onload = function(){
+  render()
+}
 
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
   recaptchaVerifier.render();
 }
 
-render()
+
 
 function phoneAuth(){
   var number ="+91 " + document.getElementsByClassName('MobileNumberVerificationInput')[0].value;
@@ -419,8 +419,9 @@ function codeverify(){
   var code = document.getElementById('VerificationCode').value;
   coderesult.confirm(code).then(function(result){
     alert("verified")
+    window.location = "myBookings.html"
     var user = result.user;
-    console.log(user);
+
   }).catch(function(error){
     alert(error.message)
   })

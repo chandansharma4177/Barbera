@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   .upper_line {
-    padding: 0 0 60px 0;
+    padding: 0 0 20px 0;
   }
 }
 
@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .why_barbera_heading {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: #52057b;
   padding: 2% 15%;
 }
@@ -308,12 +308,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .why_barbera_background_blue {
-  background-color: #52057b;
+  background-color: #603F83FF;
   padding-bottom: 30%;
 }
 
 .why_barbera_background_white {
-  background-color: #fff;
+  background-color: #C7D3D4FF;
   padding-bottom: 35%;
 }
 
