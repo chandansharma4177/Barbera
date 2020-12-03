@@ -62,10 +62,32 @@
           <div id="mobileEnterSection">
             <input type="text" class="MobileNumberVerificationInput" style="margin-bottom: 1rem"  placeholder="Enter 10 digit Phone no. ">
             <div id="recaptcha-container"></div>
-            <button type="button" onclick="phoneAuth();">Send</button>
+            <button type="button" onclick="phoneAuth();" data-toggle="modal"  data-target="#otpWindow">Send</button>
           </div>
 
 
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary LogIn"><a href="myBookings.html" style="color:#fff; text-decoration:none">Log In</a> </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="otpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">My Bookings</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body MobileNumberVerification">
           <div id="mobileVerificationSection" style="visibility:hidden">
             <p class="message">OTP sent to <span></span>  </p>
 
