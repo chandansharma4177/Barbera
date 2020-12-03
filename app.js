@@ -122,6 +122,7 @@ function off_men() {
   document.getElementById("overlay_women").style.width = "20%";
   document.getElementById("overlay_women").style.left = "80%";
   document.getElementById("overlay_women").style.padding = "20% 0";
+  document.getElementById("overlay_women").style.backgroundImage = "url('images/background_women_light.jpg')"
   document.getElementById("womenSectionButton").style.visibility = "visible";
   // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
   $('#men .owl-carousel').owlCarousel({
@@ -157,6 +158,7 @@ function off_women() {
   document.getElementById("overlay_men").style.width = "20%";
   document.getElementById("overlay_men").style.right = "80%";
   document.getElementById("overlay_men").style.padding = "20% 0";
+  document.getElementById("overlay_men").style.backgroundImage = "url('images/background_men_light.jpg')"
   document.getElementById("menSectionButton").style.visibility = "visible";
 
   $('#women .owl-carousel').owlCarousel({
@@ -398,19 +400,25 @@ function render() {
   recaptchaVerifier.render();
 }
 
-
+function verification() {
+  document.getElementById("mobileEnterSection").style.display = "block"
+  document.getElementById("mobileVerificationSection").style.display = "none"
+}
 
 function phoneAuth(){
+
   var number ="+91 " + document.getElementsByClassName('MobileNumberVerificationInput')[0].value;
   var appVerifier = window.recaptchaVerifier;
   firebase.auth().signInWithPhoneNumber(number, appVerifier).then(function(confrimationResult){
     window.confrimationResult = confrimationResult;
     coderesult = confrimationResult;
     $(".message span")[0].innerText = number
-    document.getElementById("phoneNumberWindow").style.visibility = "hidden"
-    document.getElementById("mobileVerificationSection").style.visibility = "visible"
+    document.getElementById("mobileEnterSection").style.display = "none"
+    document.getElementById("mobileVerificationSection").style.display = "block"
 
   }).catch(function(error){
+    // document.getElementById("mobileEnterSection").style.display = "none"
+    // document.getElementById("mobileVerificationSection").style.display = "block"
     alert(error.message)
   })
 
