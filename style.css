@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6, p {
 @media (max-width:600px) {
   #title{
     padding: 5% 0 0 0 ;
+    background-image: url('images/salon-min.jpg');
   }
 
   .title_content{
@@ -130,7 +131,7 @@ h1, h2, h3, h4, h5, h6, p {
 #about_us {
   color: #fff;
   /* background-color: #52057b; */
-  background-image: url('images/4308771.jpg');
+  background-image: url('images/43087711.png');
   background-position: center;
   background-size: cover;
   padding: 0 0 15%;
@@ -172,6 +173,7 @@ h1, h2, h3, h4, h5, h6, p {
 @media (max-width:820px) {
   #about_us {
     text-align: center;
+    background-image: url('images/43087711-compressed.jpg');
   }
 
   .about_us_hr {
@@ -197,7 +199,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 #our_motto {
   color: #fff;
-  background-color: #52057b;
+  background-image: url('images/43087711.png');
   padding: 0 0 15%;
   position: relative;
   text-align: right;
@@ -240,6 +242,7 @@ h1, h2, h3, h4, h5, h6, p {
 @media (max-width:820px) {
   #our_motto {
     text-align: center;
+    background-image: url('images/43087711-compressed.jpg');
   }
 
   body{
@@ -270,7 +273,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .why_barbera_heading {
   margin-top: 20px;
-  background-color: #52057b;
+  background-image: url('images/43087711.png');
   padding: 2% 15%;
 }
 
@@ -315,7 +318,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .why_barbera_background_blue {
-  background-color: #603F83FF;
+
+  background-image: url('images/43087711.png');
   padding-bottom: 30%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -333,6 +337,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width:820px) {
+  .why_barbera_heading{
+    background-image: url('images/43087711-compressed.jpg');
+  }
+
   .why_barbera_hr {
     position: static;
     width: auto;
@@ -351,7 +359,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 #contact_us {
   text-align: center;
-  background-color: #52057b;
+  background-image: url('images/43087711.png');
   padding: 5%;
 }
 
@@ -371,7 +379,8 @@ h1, h2, h3, h4, h5, h6, p {
 .contact_us_hr {
   width: 40%;
   height: 5px;
-  background-color: #52057b;
+  /* background-color: #52057b; */
+  background-image: url('images/43087711.png');
   margin-bottom: 4%;
 }
 
@@ -412,6 +421,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width:820px) {
+    #contact_us{
+      background-image: url('images/43087711-compressed.jpg');
+    }
+
   .contact_us_hr {
     position: static;
     width: auto;
@@ -603,10 +616,12 @@ del{
 
     #overlay_men{
       padding-top: 50%;
+      background-image: url("images/background_men-min.jpg");
     }
 
     #overlay_women{
       padding-top: 50%;
+      background-image: url("images/background_women-min.jpg");
     }
 
   .book_nav{

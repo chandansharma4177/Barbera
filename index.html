@@ -66,7 +66,7 @@
   <div class="row " style="margin:0">
     <div class="col-lg-6 title_content">
 
-        <h1 class="title_h1"> <img src="images/BarberaWhite.png" alt="" > </h1>
+        <h1 class="title_h1"> <img  src="images/BarberaWhite.png" alt="" > </h1>
         <a href="https://play.google.com/store/apps/details?id=com.barbera.barberaconsumerapp" target="_blank" ><button type="button " class="btn btn-light btn-outline-dark btn-lg google_play_image"><i class="fab fa-google-play"></i> Download</button></a>
         <a href="book.html"><button type="button " class="btn btn-light btn-outline-dark btn-lg google_play_image book_now">Book Now</button></a>
 
@@ -75,6 +75,7 @@
 
     <div class="col-lg-6 title_image">
       <img class="title_img" src="images/app image.png" alt="app picture">
+
     </div>
 
   </div>
@@ -95,7 +96,7 @@
         <h2 class="about_us_h2">ABOUT US</h2>
         <hr class="about_us_hr">
         <p class="about_us_p">We provide salon services at home for men and women at reasonable price</p>
-        <img class="about_us_image" src="images/hair_cut.png" alt="hair cut picture">
+        <img class="about_us_image" src="images/hair_cut-compressed.jpg" alt="hair cut picture">
       </div>
 
 
@@ -114,7 +115,7 @@
           <hr class="our_motto_hr">
           <p class="our_motto_p">Are dedicated to provide quality services to our
             customers at their places during pandemic time, when going outside means risking your loved ones life</p>
-          <img class="our_motto_image" src="images/hair_cut_1.png" alt="hair cut picture">
+          <img class="our_motto_image" src="images/hair_cut_1-compressed.jpg" alt="hair cut picture">
         </div>
 
 
@@ -133,7 +134,7 @@
               <div class="card why_barbera_card border-light" >
 
                 <div class="why_barbera_card_background">
-                  <img class="why_barbera_image" src="images/hair_cut_2.png" class="card-img-top" alt="hair cut image">
+                  <img class="why_barbera_image" src="images/hair_cut_2-compressed.jpg" class="card-img-top" alt="hair cut image">
                   <div class="why_barbera_background_white">
 
                   </div>
@@ -151,7 +152,7 @@
               <div class="card why_barbera_card border-light" >
 
                 <div class="why_barbera_card_background">
-                  <img class="why_barbera_image" src="images/sanitization.png" class="card-img-top" alt="sanitization image">
+                  <img class="why_barbera_image" src="images/sanitization-compressed.jpg" class="card-img-top" alt="sanitization image">
                   <div class="why_barbera_background_white">
 
                   </div>
@@ -169,7 +170,7 @@
               <div class="card why_barbera_card  border-light" >
 
                 <div class="why_barbera_card_background">
-                  <img class="why_barbera_image" src="images/saving.png" class="card-img-top" alt="saving image">
+                  <img class="why_barbera_image" src="images/saving-compressed.jpg" class="card-img-top" alt="saving image">
                   <div class="why_barbera_background_white">
 
                   </div>
@@ -223,5 +224,68 @@
 
     </section>
 
+
+
+    <script >
+
+
+      var hairCutImage = $('.about_us_image')[0]
+      var hairCutbigImage = document.createElement('img')
+
+      hairCutbigImage.onload = function() {
+        hairCutImage.src = this.src;
+      }
+
+      hairCutbigImage.src = "images/hair_cut.png"
+
+
+      var hairCut1Image = $('.our_motto_image')[0]
+      var hairCut1bigImage = document.createElement('img')
+
+      hairCut1bigImage.onload = function() {
+        hairCut1Image.src = this.src;
+      }
+
+      hairCut1bigImage.src = "images/hair_cut_1.png"
+
+
+
+      var hairCut2Image = $('.why_barbera_image')[0]
+      var hairCut2bigImage = document.createElement('img')
+
+      hairCut2bigImage.onload = function() {
+        hairCut2Image.src = this.src;
+      }
+
+      hairCut2bigImage.src = "images/hair_cut_2.png"
+
+
+
+
+      var sanitizationImage = $('.why_barbera_image')[1]
+      var sanitizationbigImage = document.createElement('img')
+
+      sanitizationbigImage.onload = function() {
+        sanitizationImage.src = this.src;
+      }
+
+      sanitizationbigImage.src = "images/sanitization.png"
+
+
+
+      var savingImage = $('.why_barbera_image')[2]
+      var savingbigImage = document.createElement('img')
+
+      savingbigImage.onload = function() {
+        savingImage.src = this.src;
+      }
+
+      savingbigImage.src = "images/saving.png"
+
+    </script>
+
   </body>
+
+
+
 </html>

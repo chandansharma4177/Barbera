@@ -122,7 +122,7 @@ function off_men() {
   document.getElementById("overlay_women").style.width = "20%";
   document.getElementById("overlay_women").style.left = "80%";
   document.getElementById("overlay_women").style.padding = "20% 0";
-  document.getElementById("overlay_women").style.backgroundImage = "url('images/background_women_light.jpg')"
+  document.getElementById("overlay_women").style.backgroundImage = "url('images/background_women_light-min.jpg')"
   document.getElementById("womenSectionButton").style.visibility = "visible";
   // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
   $('#men .owl-carousel').owlCarousel({
@@ -158,7 +158,7 @@ function off_women() {
   document.getElementById("overlay_men").style.width = "20%";
   document.getElementById("overlay_men").style.right = "80%";
   document.getElementById("overlay_men").style.padding = "20% 0";
-  document.getElementById("overlay_men").style.backgroundImage = "url('images/background_men_light.jpg')"
+  document.getElementById("overlay_men").style.backgroundImage = "url('images/background_men_light-min.jpg')"
   document.getElementById("menSectionButton").style.visibility = "visible";
 
   $('#women .owl-carousel').owlCarousel({
@@ -428,7 +428,7 @@ function codeverify(){
   var code = document.getElementById('VerificationCode').value;
   console.log(code);
   coderesult.confirm(code).then(function(result){
-    
+
     window.location = "myBookings.html"
     var user = result.user;
 
