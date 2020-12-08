@@ -1,11 +1,3 @@
-// $(".book_now")[0].addEventListener('click', function(){
-//   setTimeout(function(){window.location="book.html";}, 3000)
-// })
-
-// setTimeout(function(){window.location="book.html";}, 3000)
-
-
-
 function plus_minus() {
   for (var i =0; i<$('.minus').length; i++){
     $('.minus')[i].addEventListener("click"  , function () {
@@ -16,7 +8,6 @@ function plus_minus() {
       $input.change();
       quantityChangeFunction();
       return false;
-
     });
     $('.minus')[i].addEventListener("tap"  , function () {
       var $input = $(this).parent().find('input');
@@ -26,38 +17,25 @@ function plus_minus() {
       $input.change();
       quantityChangeFunction();
       return false;
-
     });
   }
-
   for (var i =0; i<$('.minus').length; i++){
     $('.plus')[i].addEventListener("click", function () {
-
       var $input = $(this).parent().find('input');
       $input.val(parseInt($input.val()) + 1);
       $input.change();
-
       quantityChangeFunction();
       return false;
-
-
     });
-
-
     $('.plus')[i].addEventListener("tap", function () {
-
       var $input = $(this).parent().find('input');
       $input.val(parseInt($input.val()) + 1);
       $input.change();
-
       quantityChangeFunction();
       return false;
     });
   }
-
 }
-
-
 
 // Your web app's Firebase configuration
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -72,46 +50,30 @@ function plus_minus() {
    measurementId: "G-9XMDWD517K"
  };
 
-
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
  var db = firebase.firestore();
  db.collection("Men\'s Salon").orderBy("index").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-
       var position = document.getElementById(doc.data().index);
-
       var title = position.querySelector(".title").innerText = doc.data().Service_title;
       var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
       var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
       var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-
-
     });
 });
 
-
-
 db.collection("Women\'s Salon").orderBy("index").get().then((querySnapshot) => {
    querySnapshot.forEach((doc) => {
-
     if(doc.data().index !== 114){
       var position = document.getElementById(doc.data().index);
-
       var title = position.querySelector(".title").innerText = doc.data().Service_title;
       var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
       var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
       var imgSrc = position.querySelector(".card-img").src = doc.data().icon
     }
-
-
-
    });
 });
-
-
-
-
 
 
 function off_men() {
@@ -124,7 +86,6 @@ function off_men() {
   document.getElementById("overlay_women").style.padding = "20% 0";
   document.getElementById("overlay_women").style.backgroundImage = "url('images/background_women_light-min.jpg')"
   document.getElementById("womenSectionButton").style.visibility = "visible";
-  // document.getElementsById("overlay_women .woman_logo").style.width = "10rem"
   $('#men .owl-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -183,19 +144,12 @@ function off_women() {
 })
 }
 
-
-
-
-
-
-
 // --------------------------------------------cart.html----------------------------------------------------
 
 function change_cart_item_number(){
 var changeCartItemNumber = $(".cart_item");
 for (var i = 0; i < changeCartItemNumber.length; i++) {
   changeCartItemNumber[i].addEventListener("click", addItemToLocalStorage);
-
 }
 }
 
@@ -221,9 +175,6 @@ function changeCartNumber() {
   }
 }
 
-
-
-
 function addItemToLocalStorage(event) {
   var input = event.target;
   var parent = input.parentElement;
@@ -231,14 +182,12 @@ function addItemToLocalStorage(event) {
   var title = parent.getElementsByClassName("title")[0].innerText;
   var price = parent.getElementsByClassName("card-text")[0].innerText;
   var quantity = 1;
-
   var itemToList = {
     image_location: imageLocation,
     title_name: title,
     price_value: price,
     quantity_value: quantity
   }
-
   var cartItems = localStorage.getItem('itemList');
   cartItems = JSON.parse(cartItems);
   if (cartItems != null) {
@@ -258,53 +207,39 @@ function addItemToLocalStorage(event) {
     }
     changeCartNumber()
   }
-
   localStorage.setItem('itemList', JSON.stringify(cartItems));
   displayCart()
-
-
 }
 
 
 function displayCart() {
   var cartItems = localStorage.getItem("itemList");
   cartItems = JSON.parse(cartItems);
-
   var productContainer = document.querySelector("table");
   if (cartItems && productContainer) {
     productContainer.innerHTML = '';
     Object.values(cartItems).map(item => {
       productContainer.innerHTML += `
-
       <tr>
         <td style="width:20%;">  <img  class="card-img" src=${item.image_location} alt="Suresh Dasari Card">
            </td>
         <td class="table_content"> <h5 class="product_heading">${item.title_name}</h5>
         <h5 class="procuct_price">${item.price_value}</h5>
-
-
         <span class="minus ">-</span>
         <input type="number" value="1" class="quant"/>
         <span class="plus">+</span>
-
         <button class="btn btn-danger remove_button"> <span>Remove</span> </button>
        </td>
        <td class="item_total_price"><h5 class="item_total">${item.price_value}</h5> </td>
-
       </tr>
-
       `
     })
   }
-
-
   quantityChangeFunction()
   removeButtonFunction()
   totalPrice()
   plus_minus()
-
 }
-
 
 // ----------------------updating price by updating quantity -----------------------
 
@@ -316,8 +251,6 @@ function quantityChangeFunction(){
     updateQuantity(quantityChanged[i]);
   }
 }
-
-
 
 // ------------------------------------------function removeButton ------------------------------------------------------
 
@@ -334,19 +267,14 @@ function removeButtonFunction(){
       delete cartItems[key];    //removing item from local storage
       localStorage.setItem('itemList', JSON.stringify(cartItems));  //pushing the updated cartItems list to local storage
 
-
-
   // --------------------------------------------Updating the cartItemNumber--------------------------------------------
       var cartItemNumber = localStorage.getItem('cartItemNumbers')
       cartItemNumber = parseInt(cartItemNumber) -1;
-
       localStorage.setItem('cartItemNumbers', JSON.stringify(cartItemNumber));
       onLoadCartNumber()
       totalPrice()
     })
   }
-
-
 }
 
 
@@ -354,24 +282,17 @@ function updateQuantity(input) {
 
   var parentInput = input.parentElement.parentElement
   var itemTotal = parentInput.getElementsByClassName("item_total")[0];
-
   var priceValue = parseFloat(parentInput.getElementsByClassName("procuct_price")[0].innerText.replace("Rs ", ""));
-
   var quantity = parentInput.getElementsByClassName("quant")[0].value;
   var total = 0;
   total = priceValue * quantity;
   itemTotal.innerText = "Rs " + total;
   totalPrice()
-
-
   var quantityTotalTitle = parentInput.getElementsByClassName("product_heading")[0].innerText;
   var cartItems = localStorage.getItem('itemList');
   cartItems = JSON.parse(cartItems);
   cartItems[quantityTotalTitle].quantity_value = quantity;
-
 localStorage.setItem('itemList', JSON.stringify(cartItems));
-
-
 }
 
 function totalPrice(){
@@ -380,17 +301,15 @@ function totalPrice(){
   for(var i=0; i<totalPricePerItem.length; i++){
       total_price += parseInt(totalPricePerItem[i].innerText.replace("Rs ", ""));
   }
-
   $(".total-price span")[0].innerText = "Rs "+ total_price;
 }
-
 
 displayCart()
 onLoadCartNumber()
 
 
-firebase.auth().languageCode = 'it';
 
+firebase.auth().languageCode = 'it';
 window.onload = function(){
   render()
 }
@@ -417,8 +336,6 @@ function phoneAuth(){
     document.getElementById("mobileVerificationSection").style.display = "block"
 
   }).catch(function(error){
-    // document.getElementById("mobileEnterSection").style.display = "none"
-    // document.getElementById("mobileVerificationSection").style.display = "block"
     alert(error.message)
   })
 

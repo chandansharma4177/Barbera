@@ -1,120 +1,112 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
 
-    <!-- icon -->
-    <link rel="icon" href="images/favicon.ico">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <!-- icon -->
+  <link rel="icon" href="images/favicon.ico">
 
- <link rel="stylesheet" href="https://rawgit.com/ericjgagnon/wickedpicker/master/stylesheets/wickedpicker.css" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="https://rawgit.com/ericjgagnon/wickedpicker/master/stylesheets/wickedpicker.css" />
 
-    <!-- CSS stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <!-- CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/f39c9ed978.js" crossorigin="anonymous"></script>
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/f39c9ed978.js" crossorigin="anonymous"></script>
+</head>
 
-
-
-
-
-  </head>
-  <body style="  overflow-x: hidden;">
-    <section id="navigationBar">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  book_nav " style="width:100%" >
+<body style="  overflow-x: hidden;">
+  <section id="navigationBar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  book_nav " style="width:100%">
       <a class="navbar-brand barbera_logo_book" href="book.html"><strong>Back </strong> </a>
-
     </nav>
-
 
     <div class="modal fade" id="submitModel" style="margin-right:5px" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content" style="background-color:#000">
-          <div class="modal-body" >
+          <div class="modal-body">
             <h4 style="color:#fff">Congratulations!!!</h4>
             <h6 style="color:#fff">Successfully Booked</h6>
           </div>
-
         </div>
       </div>
     </div>
+  </section>
+
+  <div class="row" style="margin:0">
+    <div class="col-lg-6">
+      <table class="final_product_table" style="width:100%">
+        <tr>
+          <td style="padding-left: 1rem; width:55%;">Item </td>
+          <td style="width:25%;">Quantity </td>
+          <td style="width:20%;">Item Price </td>
+        </tr>
+        <tr>
+          <td>
+            <hr>
+          </td>
+          <td>
+            <hr>
+          </td>
+          <td>
+            <hr>
+          </td>
+        </tr>
+
+      </table>
+
+      <div class="final-price">
+        <h5>Total Amount: <span> </span></h5>
+      </div>
+    </div>
+    <div class="col-lg-6 choose_date">
+
+      <form method="post" id="myForm">
 
 
-
-    </section>
-
-      <div class="row" style="margin:0">
-        <div class="col-lg-6">
-          <table class="final_product_table" style="width:100%">
-            <tr>
-
-              <td style="padding-left: 1rem; width:55%;">Item </td>
-              <td style="width:25%;">Quantity </td>
-              <td style="width:20%;">Item Price </td>
-            </tr>
-            <tr>
-
-              <td> <hr> </td>
-              <td> <hr> </td>
-              <td> <hr> </td>
-            </tr>
-
-          </table>
-
-          <div class="final-price">
-            <h5>Total Amount: <span> </span></h5>
-          </div>
-        </div>
-        <div class="col-lg-6 choose_date">
-
-          <form    method="post" id="myForm" >
+        <pre>Name       : <input  type="text" class="name" name="Name" value="" required=""></pre>
 
 
-            <pre>Name       : <input  type="text" class="name" name="Name" value="" required=""></pre>
+        <pre>Mobile No. : <input type="number" class="mobile" name="Mobile Number" value="" required="" minlength="10" maxlength="10"></pre>
 
-
-            <pre>Mobile No. : <input type="number" class="mobile" name="Mobile Number" value="" required="" minlength="10" maxlength="10"></pre>
-
-            <pre>Address    :
+        <pre>Address    :
 <textarea name="Address" rows="3" cols="30" class="address" required=""></textarea> </pre>
 
-            <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  name="Date" required="">  </pre>
+        <pre>Date       : <input  class="datepicker " value="dd/mm/yy"  name="Date" required="">  </pre>
 
-            <pre>Time       : <input type="time"  class="timepicker" name="Time" required=""> </span>
+        <pre>Time       : <input type="time"  class="timepicker" name="Time" required=""> </span>
              <span style="font-size:0.4rem">*enter a time between 8 a.m. to 7 p.m.</span>
              <span style="font-size:0.4rem">*enter a time 1 hour from current time</span></pre>
 
-            <!-- <input type="submit" name="Submit" class="submitButton" onclick="errorChecker()" style="width:100%; margin-bottom:5%" value="Submit"> -->
+        <!-- <input type="submit" name="Submit" class="submitButton" onclick="errorChecker()" style="width:100%; margin-bottom:5%" value="Submit"> -->
 
-          </form>
+      </form>
 
-        <button  name="button"  class="btn btn-success submitButton" data-toggle="modal"  data-target="#submitModel"  style="width:100%; margin-bottom:5%">Submit</button>
+      <button name="button" class="btn btn-success submitButton" data-toggle="modal" data-target="#submitModel" style="width:100%; margin-bottom:5%">Submit</button>
 
-        </div>
+    </div>
 
-      </div>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  </div>
 
 
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="wickedpicker.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 
-    <script src="submit.js" charset="utf-8"></script>
-  </body>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="wickedpicker.js" charset="utf-8"></script>
+
+
+  <script src="submit.js" charset="utf-8"></script>
+</body>
+
 </html>
