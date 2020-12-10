@@ -235,7 +235,7 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
           var compareDate =val.Date[13] +val.Date[14] +val.Date[15] +val.Date[16]+val.Date[10] +val.Date[11] + val.Date[7]+ val.Date[8]
           compareDate = parseInt(compareDate)
 
-          var compareTodayDate = date.getFullYear() + month + date.getDate()
+          var compareTodayDate = todayDate[6]+todayDate[7]+todayDate[8]+todayDate[9]+todayDate[3]+todayDate[4]+todayDate[0]+todayDate[1]
           compareTodayDate = parseInt(compareTodayDate)
 
           console.log(compareDate);
