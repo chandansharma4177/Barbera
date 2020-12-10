@@ -277,7 +277,7 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
             </td>
           </tr>`
           }
-          else{
+          else if(dateEntered == todayDate && compareTime <realTime){
             bookTable.innerHTML += `
 
               <br>
