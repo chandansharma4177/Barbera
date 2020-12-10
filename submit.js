@@ -145,7 +145,7 @@ $('.submitButton')[0].addEventListener('click', function(){
     	body: JSON.stringify({"data": {"ID":identity , "Mobile_Number":mobileNumber,"Name":name,"Address":address,"Date":changedDate,"Time":changedTime, "Items":finalItemList, "Total Amount": totalPayableMoney}}),
     }).then(res =>{
     	if (res.status === 201){
-    		
+
         location.href = 'index.html'
     	}
     	else{
@@ -232,6 +232,15 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
           var month = parseInt(date.getMonth()) +1
           var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
 
+          var compareDate =val.Date[13] +val.Date[14] +val.Date[15] +val.Date[16]+val.Date[10] +val.Date[11] + val.Date[7]+ val.Date[8]
+          compareDate = parseInt(compareDate)
+
+          var compareTodayDate = date.getFullYear() + month + date.getDate()
+          compareTodayDate = parseInt(compareTodayDate)
+
+          console.log(compareDate);
+          console.log(compareTodayDate);
+
           bookTable.innerHTML += `
           <tr>
             <td class="bookedDate">${dateEntered}</td>
@@ -240,7 +249,17 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
 
           `
 
-          if(dateEntered != todayDate ){
+          if(compareDate < compareTodayDate){
+            bookTable.innerHTML += `
+
+              <br>
+              <br>
+              <button type="button" class="btn btn-success " name="button">Completed</button>
+            </td>
+          </tr>`
+          }
+
+          else if(compareDate >= compareTodayDate ){
             bookTable.innerHTML += `
 
               <br>
