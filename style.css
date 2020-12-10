@@ -543,7 +543,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .woman_logo{
-  width: 40%;
+  width: 35%;
   opacity: 0.8;
   margin-left: auto;
   margin-right: auto;
@@ -677,12 +677,12 @@ del{
 
   .woman_logo{
     margin-bottom: 6%;
-    width: 82%;
+    width: 75%;
   }
 
   .man_logo{
-    width:82%;
-    margin-bottom: 6%;
+    width:85%;
+    margin-top: 9px;
   }
 
 }
