@@ -238,8 +238,6 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
           var compareTodayDate = todayDate[6]+todayDate[7]+todayDate[8]+todayDate[9]+todayDate[3]+todayDate[4]+todayDate[0]+todayDate[1]
           compareTodayDate = parseInt(compareTodayDate)
 
-          console.log(compareDate);
-          console.log(compareTodayDate);
 
           bookTable.innerHTML += `
           <tr>
@@ -258,7 +256,15 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
             </td>
           </tr>`
           }
+          else if(dateEntered == todayDate && compareTime <realTime){
+            bookTable.innerHTML += `
 
+              <br>
+              <br>
+              <button type="button" class="btn btn-success " name="button">Completed</button>
+            </td>
+          </tr>`
+          }
           else if(compareDate >= compareTodayDate ){
             bookTable.innerHTML += `
 
@@ -277,15 +283,7 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
             </td>
           </tr>`
           }
-          else if(dateEntered == todayDate && compareTime <realTime){
-            bookTable.innerHTML += `
 
-              <br>
-              <br>
-              <button type="button" class="btn btn-success " name="button">Completed</button>
-            </td>
-          </tr>`
-          }
         }
 
       })
