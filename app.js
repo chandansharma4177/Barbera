@@ -55,6 +55,7 @@ function plus_minus() {
  var db = firebase.firestore();
  db.collection("Men\'s Salon").orderBy("index").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
+    
       var position = document.getElementById(doc.data().index);
       var title = position.querySelector(".title").innerText = doc.data().Service_title;
       var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
@@ -65,13 +66,11 @@ function plus_minus() {
 
 db.collection("Women\'s Salon").orderBy("index").get().then((querySnapshot) => {
    querySnapshot.forEach((doc) => {
-    if(doc.data().index !== 114){
       var position = document.getElementById(doc.data().index);
       var title = position.querySelector(".title").innerText = doc.data().Service_title;
       var price = position.querySelector(".card-text").innerText = "Rs "+ doc.data().price;
       var cut_price = position.querySelector("del").innerText = "Rs " + doc.data().cut_price;
       var imgSrc = position.querySelector(".card-img").src = doc.data().icon
-    }
    });
 });
 
