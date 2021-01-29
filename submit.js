@@ -238,7 +238,12 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
           var compareTodayDate = todayDate[6]+todayDate[7]+todayDate[8]+todayDate[9]+todayDate[3]+todayDate[4]+todayDate[0]+todayDate[1]
           compareTodayDate = parseInt(compareTodayDate)
 
-
+          console.log(compareDate);
+          console.log(compareTodayDate);
+          console.log(compareTime);
+          console.log(typeof(compareTime));
+          console.log(realTime);
+          console.log(typeof(realTime));
           bookTable.innerHTML += `
           <tr>
             <td class="bookedDate">${dateEntered}</td>
