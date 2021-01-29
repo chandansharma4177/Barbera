@@ -224,15 +224,17 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
           var time = val.Time[7]+val.Time[8]+val.Time[9]+val.Time[10]+val.Time[11]
 
           var compareTime = val.Time[7]+val.Time[8]+val.Time[10]+val.Time[11]
-
+          compareTime = parseInt(compareTime)
           var date = new Date();
 
           var realTime =(date.getHours() + 1)*100 + date.getMinutes()
 
-          var month = parseInt(date.getMonth()) +1
+          var month = parseInt(date.getMonth()) +11
           var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
 
-          var compareDate =val.Date[13] +val.Date[14] +val.Date[15] +val.Date[16]+val.Date[10] +val.Date[11] + val.Date[7]+ val.Date[8]
+          var compareDateMonth = parseInt(val.Date[10] + val.Date[11]) + 10
+          compareDateMonth = String(compareDateMonth)
+          var compareDate =val.Date[13] +val.Date[14] +val.Date[15] +val.Date[16]+ compareDateMonth + val.Date[7]+ val.Date[8]
           compareDate = parseInt(compareDate)
 
           var compareTodayDate = todayDate[6]+todayDate[7]+todayDate[8]+todayDate[9]+todayDate[3]+todayDate[4]+todayDate[0]+todayDate[1]
