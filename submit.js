@@ -53,7 +53,7 @@ var realTime =(date.getHours() + 1)*100 + date.getMinutes()
 var month = parseInt(date.getMonth()) +1
 var todayDate =date.getDate() + "/"+ month + "/" +date.getFullYear()
 
-console.log(todayDate);
+
 
 
 $('.submitButton')[0].addEventListener('click', function(){
@@ -100,8 +100,8 @@ $('.submitButton')[0].addEventListener('click', function(){
             return false
           }
           else{
-            if(time === "" || hour<8 || hour > 18){
-              alert("Please enter time between 8 a.m. to 7 p.m.")
+            if(time === "" || hour<9 || hour > 18){
+              alert("Please enter time between 9 a.m. to 7 p.m.")
               return false
           }else if(selectedTime <= realTime && date === todayDate ){
               alert("please choose time 1 hour from current time")
@@ -240,12 +240,6 @@ fetch("https://api.apispreadsheets.com/data/4366/").then(res=>{
           var compareTodayDate = todayDate[6]+todayDate[7]+todayDate[8]+todayDate[9]+todayDate[3]+todayDate[4]+todayDate[0]+todayDate[1]
           compareTodayDate = parseInt(compareTodayDate)
 
-          console.log(compareDate);
-          console.log(compareTodayDate);
-          console.log(compareTime);
-          console.log(typeof(compareTime));
-          console.log(realTime);
-          console.log(typeof(realTime));
           bookTable.innerHTML += `
           <tr>
             <td class="bookedDate">${dateEntered}</td>
@@ -338,7 +332,6 @@ var id1=	enteredMobileNo + selectedDateValue + selectedTimeValue
 fetch("https://api.apispreadsheets.com/data/4366/?query=deletefrom4366whereID="+ "'" +id1 + "'").then(res=>{
 	if (res.status === 200){
 		// SUCCESS
-
       location.reload();
 	}
 	else{
